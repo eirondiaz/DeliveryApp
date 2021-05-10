@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+//valiables
+
+$acent: rgb(219, 60, 20);
+$acent-secondary: rgb(226, 86, 51);
+
+.btn-acent{
+    background-color: $acent;
+    color: white;
+}
+
+.btn-acent-secondary{
+    background-color: $acent-secondary;
+    color: white;
+}
+
+button:hover{
+    transform: scale(1.02);
+    color: white !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+body{
+    font-family: 'Quicksand', sans-serif !important ;  
+}
+
