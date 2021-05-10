@@ -1,16 +1,42 @@
 //valiables
 
-$acent: rgb(235, 79, 41);
-$acent-secondary: rgb(228, 113, 84);
+$acent: rgb(238, 91, 54);
+$acent-secondary: rgb(240, 128, 100);
 
-button:hover{
-    transform: scale(1.02);
-    color: white !important;
-    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.18);
-}
+//STYLES
 
 body{
     font-family: 'Quicksand', sans-serif !important ;  
+}
+
+button:hover{
+    transform: scale(1.02);
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.15);
+    padding-bottom: 6.2px;
+}
+
+.navbar{
+    border-radius: 20px;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: white;
+    padding: 10px;
+    // padding-top: 20px;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.15);
+    color: $acent;
+    font-size: 24px !important;
+    
+    text-align: center;
+}
+
+.navbar-element{
+    cursor: pointer !important;
+}
+
+.text-acent{
+    color: $acent;
 }
 
 .btn-acent{
@@ -18,11 +44,64 @@ body{
     color: white;
 }
 
-.btn-acent-secondary{
+.btn-acent-disabled{
     background-color: $acent-secondary;
     color: white;
+}
+
+.btn-acent:hover{
+    // background-color: rgb(228, 77, 39);
+    color: white;
+}
+.btn-acent-disabled:hover{
+    cursor: no-drop; 
+    color: white;
+    transform: scale(1.0) !important;
+    box-shadow: 0px 0px 0px transparent !important;
+    padding-bottom: 6 !important;
 }
 
 .btn{
     border-radius: 12px !important;
 }
+
+//cardStyles
+
+.product-card img {
+    transition: all 0.15s linear;
+    position: relative;
+}
+
+.product-card img:hover {
+    transform: scale(1.01);
+}
+
+/* Animaciones */
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+  
