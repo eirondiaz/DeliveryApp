@@ -1,12 +1,60 @@
+
 //valiables
 
+// $acent: rgb(86, 73, 206);
+// $acent-secondary: rgb(160, 118, 240);
 $acent: rgb(238, 91, 54);
 $acent-secondary: rgb(250, 145, 119);
 
+$acent-optional: rgb(43, 187, 173);
+$acent-blue: rgb(69, 82, 110);
+
 //STYLES
+.form-check-input:checked{
+    background-color: $acent;
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 25%);
+    border-color: rgba(238, 91, 54, 0.25);
+}
+.form-check-input:focus{
+    box-shadow: none;
+    border-color: rgba(238, 91, 54, 0.25);
+}
+.form-control:focus{
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 25%);
+    border-color: rgba(238, 91, 54, 0.25);
+}
+
+.btn:focus{
+    box-shadow: 0 0 0 0.05rem rgb(238 91 54 / 15%);
+    border-color: rgba(238, 91, 54, 0.25);
+}
+
+label{
+    font-size: 12px;
+}
+
+.bg-acent{
+    background-color: $acent;
+    color: white;
+    
+}
+.bg-acent-secondary{
+    background-color: $acent-secondary;
+    color: white;
+    
+}
+
+.alert{
+    border-radius: 12px;
+}
 
 body{
     font-family: 'Quicksand', sans-serif !important ;  
+    background-color: rgb(251, 251, 251);
+}
+
+a:hover{
+    color: rgb(68, 46, 146);
 }
 
 button:hover{
@@ -15,6 +63,9 @@ button:hover{
     padding-bottom: 6.2px;
 }
 
+button{
+    outline: none !important;
+}
 .card-img{
     border-radius: 20px;
     width: 100%;
@@ -30,17 +81,22 @@ button:hover{
 
 .navbar{
     border-radius: 20px;
-    margin-top: 20px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    
     background-color: white;
-    padding: 10px;
     // padding-top: 20px;
     box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.10);
     font-size: 24px !important;
     
-    text-align: center;
+}
+
+.emp-card{
+    
+    border-radius: 20px;
+    
+    background-color: white;
+    // padding-top: 20px;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.10);
+    
 }
 
 .navbar-element-active {
@@ -67,6 +123,10 @@ button:hover{
     background-color: $acent;
     color: white;
 }
+.btn-acent-secondary{
+    background-color: $acent-secondary;
+    color: white;
+}
 
 .btn-acent-disabled{
     background-color: $acent-secondary;
@@ -77,6 +137,10 @@ button:hover{
     // background-color: rgb(228, 77, 39);
     color: white;
 }
+.btn-acent-secondary:hover{
+    color: white;
+}
+
 .btn-acent-disabled:hover{
     cursor: no-drop; 
     color: white;
@@ -86,6 +150,12 @@ button:hover{
 }
 
 .btn{
+    border-radius: 12px !important;
+}
+.form-control{
+    border-radius: 12px !important;
+}
+.form-select{
     border-radius: 12px !important;
 }
 

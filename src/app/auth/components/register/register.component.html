@@ -1,1 +1,47 @@
-<p>register works!</p>
+
+<div class="animated fadeIn p-2">
+
+    <h1>Registrarse</h1>
+
+    <form autocomplete="off" [formGroup]="form" (ngSubmit)="createUser(form.value)" >
+
+        <div class="row mt-4 auth-container">
+            <div class="col-lg-5 offset-lg-1 col-md-6 col-sm-12 col-12">
+                <label for="name">NOMBRE</label>
+                <input formControlName="name" pe="text" id="name" class="form-control mb-3" placeholder="">
+                
+                <label for="lastName">APELLIDO</label>
+                <input formControlName="lastName" type="text" id="lastName" class="form-control mb-3" placeholder="">
+                
+                <label for="user">NOMBRE DE USUARIO</label>
+                <input formControlName="user" type="text" id="user" class="form-control mb-3" placeholder="">           
+                
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+                
+                <label for="email">EMAIL</label>
+                <input formControlName="email" type="text" id="email" class="form-control mb-3" placeholder="">
+                
+                <label for="pass">CONTRASENA</label>
+                <input formControlName="pass" type="text" id="pass" class="form-control mb-3" placeholder="">
+                
+                <label for="phone">TELEFONO</label>
+                <input formControlName="phone" type="text" id="phone" class="form-control mb-3" placeholder="">
+           
+            </div>
+
+            <div class="text-center mt-4 col-12">
+                <button [disabled]="form.invalid || signining" type="submit" class="btn btn-acent w-50">
+                    {{!signining? 'Registrarme': 'Registrando...'}}
+                    <i *ngIf="signining" class="mx-2 fas fa-sync fa-spin"></i>
+                </button>
+                <p class="mt-3">Ya tienes una cuenta?
+                    <b style="cursor: pointer;" routerLink="/auth/login" class="text-acent">
+                        Inicia sesion.
+                    </b>
+                </p>
+            </div>
+        </div>
+    </form>
+   
+</div>
