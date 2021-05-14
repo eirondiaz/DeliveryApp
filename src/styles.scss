@@ -12,21 +12,35 @@ $acent-blue: rgb(69, 82, 110);
 //STYLES
 .form-check-input:checked{
     background-color: $acent;
-    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 25%);
-    border-color: rgba(238, 91, 54, 0.25);
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 15%);
+    border-color: rgba(238, 91, 54, 0.15);
 }
 .form-check-input:focus{
     box-shadow: none;
     border-color: rgba(238, 91, 54, 0.25);
 }
 .form-control:focus{
-    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 25%);
-    border-color: rgba(238, 91, 54, 0.25);
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 10%);
+    border-color: rgba(238, 91, 54, 0.05);
+    background-color: rgb(243, 243, 243);
 }
 
+.form-control{
+    border-radius: 12px !important;
+    background-color: rgb(243, 243, 243);
+    box-shadow: none;
+    border-color: transparent;
+    outline: none;
+}
+.form-select{
+    border-radius: 12px !important;
+}
 .btn:focus{
     box-shadow: 0 0 0 0.05rem rgb(238 91 54 / 15%);
     border-color: rgba(238, 91, 54, 0.25);
+}
+.btn{
+    border-radius: 12px !important;
 }
 
 label{
@@ -50,7 +64,7 @@ label{
 
 body{
     font-family: 'Quicksand', sans-serif !important ;  
-    background-color: rgb(251, 251, 251);
+  
 }
 
 a:hover{
@@ -149,15 +163,6 @@ button{
     padding-bottom: 6 !important;
 }
 
-.btn{
-    border-radius: 12px !important;
-}
-.form-control{
-    border-radius: 12px !important;
-}
-.form-select{
-    border-radius: 12px !important;
-}
 
 //cardStyles
 

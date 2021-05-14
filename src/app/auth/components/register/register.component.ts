@@ -28,7 +28,8 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  signining= false
+  signining = false
+  emailRepeat = false
   createUser(form: any) {
     this.signining= true
     
@@ -41,6 +42,11 @@ export class RegisterComponent implements OnInit {
         console.log(res.token)
         this.router.navigate(['/dashboard/home'])
         this.signining = false
+      },
+      error => {
+        console.log(error)
+        this.signining = false
+        this.emailRepeat = true
       }
     )
     

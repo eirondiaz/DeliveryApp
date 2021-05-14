@@ -15,4 +15,8 @@ export class AuthService {
     return this.http.post<any>(`${this.urlAPI}/register`, user)
   }
 
+  login(user: any) {
+    return this.http.post<any>(`${this.urlAPI}/login`, user)
+  }
+
 }
