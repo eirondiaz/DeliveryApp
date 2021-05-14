@@ -1,46 +1,57 @@
 
 <div class="animated fadeIn p-3 " style="text-align: center;" >
 
-    <h1 style="color: rgb(87, 87, 87);">Iniciar sesion</h1>
+    
 
     <div class="mt-4" >
         <form autocomplete="off" [formGroup]="form" (ngSubmit)="login(form.value)" >
-            <div class="row ">
+            <div class="row "> 
 
-                <div *ngIf="notMatch" class="alert alert-warning mt-4 animated fadeIn">
-                    Ha ocurrido un error al iniciar sesión! 
-                    <i class="fas fa-exclamation-triangle mx-2"></i>
-                </div>
-                
-                <div class="auth-container  col-lg-6 offset-lg-3 col-md-6 offset-md-3 " >
-                    
-                    <b class="mt-2 pt-3">Introduce tus datos para iniciar sesión</b>
+                <div class=" col-lg-5 col-md-6 d-none d-sm-block d-sm-none d-md-block text-center"  style="font-size: 240px;">
                    
-                   <div class="col-12 mt-3">
-                       <div class="form-floating mb-3">
-                           <input formControlName="email" type="text" id="email" class="form-control mb-3" placeholder="email">
-                           <label for="email">Email</label>
-                       </div>                  
-                       <div class="form-floating mb-3">
-                           <input formControlName="pass" type="password" id="pass" class="form-control mb-3" placeholder="contraseña">
-                           <label for="pass">Contraseña</label>
-                       </div>
-                       
-                   </div>
-       
-                   <div class="text-center mt-4 col-12">
-                       <button [disabled]="form.invalid || logining" type="submit" class="btn btn-acent w-50">
-                           {{!logining? 'Iniciar sesion': 'Iniciando...'}}
-                           <i *ngIf="logining" class="mx-2 fas fa-sync fa-spin"></i>
-                       </button>
-                       <p class="mt-4">Aun no tienes cuenta?
-                           <b style="cursor: pointer;" routerLink="/auth/register" class="text-acent">
-                               Registrate. 
-                           </b>
-                       </p>
-   
-                   </div>
-               </div>
+                   <div class="mt-5">
+                    <i class=" fas fa-hamburger text-acent-secondary" ></i>
+                   </div> 
+                </div>
+
+                <div class=" col-lg-7 col-md-6 " >
+
+                    <h1 style="color: rgb(87, 87, 87);">Iniciar sesion</h1>
+
+                    <div *ngIf="notMatch" class="alert alert-warning mt-4 animated fadeIn">
+                        Ha ocurrido un error al iniciar sesión! 
+                        <i class="fas fa-exclamation-triangle mx-2"></i>
+                    </div>
+                    
+                    <div class="auth-container ">
+                        <b class="mt-2 pt-3">Introduce tus datos para iniciar sesión</b>
+                    
+                    <div class="col-12 mt-3">
+                        <div class="form-floating mb-3">
+                            <input formControlName="email" type="text" id="email" class="form-control mb-3" placeholder="email">
+                            <label for="email">Email</label>
+                        </div>                  
+                        <div class="form-floating mb-3">
+                            <input formControlName="pass" type="password" id="pass" class="form-control mb-3" placeholder="contraseña">
+                            <label for="pass">Contraseña</label>
+                        </div>
+                        
+                    </div>
+        
+                    <div class="text-center mt-4 col-12">
+                        <button [disabled]="form.invalid || logining" type="submit" class="btn btn-acent w-50">
+                            {{!logining? 'Iniciar sesion': 'Iniciando...'}}
+                            <i *ngIf="logining" class="mx-2 fas fa-sync fa-spin"></i>
+                        </button>
+                        <p class="mt-4">Aun no tienes cuenta?
+                            <b style="cursor: pointer;" routerLink="/auth/register" class="text-acent">
+                                Registrate. 
+                            </b>
+                        </p>
+    
+                    </div>
+                    </div>
+            </div>
            </div>
 
         </form>
