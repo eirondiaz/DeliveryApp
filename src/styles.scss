@@ -1,7 +1,7 @@
 //valiables
 
 $acent: rgb(238, 91, 54);
-$acent-secondary: rgb(240, 128, 100);
+$acent-secondary: rgb(250, 145, 119);
 
 //STYLES
 
@@ -15,6 +15,19 @@ button:hover{
     padding-bottom: 6.2px;
 }
 
+.card-img{
+    border-radius: 20px;
+    width: 100%;
+}
+
+.card-cont-img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;        
+    border-radius: 20px;
+    
+}
+
 .navbar{
     border-radius: 20px;
     margin-top: 20px;
@@ -24,15 +37,26 @@ button:hover{
     background-color: white;
     padding: 10px;
     // padding-top: 20px;
-    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.15);
-    color: $acent;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.10);
     font-size: 24px !important;
     
     text-align: center;
 }
 
-.navbar-element{
-    cursor: pointer !important;
+.navbar-element-active {
+    color: $acent;
+}
+
+.navbar-element-inactive{
+    color: $acent-secondary;
+}
+
+
+.navbar-element-inactive :hover{
+    transform: scale(1.04) !important;
+}
+.navbar-element-active :hover{
+    transform: scale(1.04) !important;
 }
 
 .text-acent{
