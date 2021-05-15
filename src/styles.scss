@@ -1,22 +1,65 @@
+
 //valiables
 
 // $acent: rgb(86, 73, 206);
 // $acent-secondary: rgb(160, 118, 240);
+<<<<<<< HEAD
 
 $acent: rgb(238, 91, 54);
 $acent-secondary: rgb(250, 145, 119);
 
 $acent-optional: rgb(43, 187, 173);
+=======
+$acent: rgb(250, 88, 48);
+$acent-secondary: rgb(250, 145, 119);
+
+$acent-optional: rgb(43, 187, 173);
+$acent-blue: rgb(69, 82, 110);
+>>>>>>> lewis
 
 //STYLES
 .form-check-input:checked{
     background-color: $acent;
+<<<<<<< HEAD
     box-shadow: 0 0 0 0.15rem rgb(89 105 141 / 25%);
     border-color: rgba(89, 105, 141, 0.25);
 }
 .form-check-input:focus{
     box-shadow: none;
     border-color: rgba(89, 105, 141, 0.25);
+=======
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 15%);
+    border-color: rgba(238, 91, 54, 0.15);
+}
+.form-check-input:focus{
+    box-shadow: none;
+    border-color: rgba(238, 91, 54, 0.25);
+}
+.form-control:focus{
+    box-shadow: 0 0 0 0.15rem rgb(238 91 54 / 10%);
+    border-color: rgba(238, 91, 54, 0.05);
+    background-color: rgb(243, 243, 243);
+}
+
+.form-control{
+    border-radius: 12px !important;
+    background-color: rgb(243, 243, 243);
+    box-shadow: none;
+    border-color: transparent;
+    outline: none;
+}
+.form-select{
+    border-radius: 12px !important;
+}
+.btn:focus{
+    box-shadow: 0 0 0 0.05rem rgb(238 91 54 / 15%);
+    border-color: rgba(238, 91, 54, 0.25);
+}
+.btn{
+    border-radius: 12px !important;
+    transition: all 0.15s linear;
+    
+>>>>>>> lewis
 }
 
 label{
@@ -39,8 +82,13 @@ label{
 }
 
 body{
+<<<<<<< HEAD
     font-family: 'Quicksand', sans-serif !important ;  
     background-color: rgb(251, 251, 251);
+=======
+    // font-family: 'Quicksand', sans-serif !important ;  
+    font-family: 'Rambla', sans-serif;
+>>>>>>> lewis
 }
 
 a:hover{
@@ -108,6 +156,9 @@ button{
 .text-acent{
     color: $acent;
 }
+.text-acent-secondary{
+    color: $acent-secondary;
+}
 
 .btn-acent{
     background-color: $acent;
@@ -131,6 +182,7 @@ button{
     color: white;
 }
 
+<<<<<<< HEAD
 
 
 .form-control:focus{
@@ -143,6 +195,8 @@ button{
     border-color: rgba(89, 105, 141, 0.15);
 }
 
+=======
+>>>>>>> lewis
 .btn-acent-disabled:hover{
     cursor: no-drop; 
     color: white;
@@ -151,6 +205,7 @@ button{
     padding-bottom: 6 !important;
 }
 
+<<<<<<< HEAD
 .btn{
     border-radius: 12px !important;
 }
@@ -160,17 +215,11 @@ button{
 .form-select{
     border-radius: 12px !important;
 }
+=======
+>>>>>>> lewis
 
 //cardStyles
 
-.product-card img {
-    transition: all 0.15s linear;
-    position: relative;
-}
-
-.product-card img:hover {
-    transform: scale(1.01);
-}
 
 /* Animaciones */
 .animated {

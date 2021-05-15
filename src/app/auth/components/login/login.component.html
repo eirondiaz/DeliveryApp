@@ -1,1 +1,63 @@
-<p>login works!</p>
+
+<div class="animated fadeIn p-3 " style="text-align: center;" >
+
+
+    <div class="mt-4" >
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="login(form.value)" >
+            <div class="row " > 
+
+                <div class=" col-lg-5 col-md-6 d-none d-sm-block d-sm-none d-md-block text-center"  >
+                    <div class="mt-5">
+                        <h1 class="p-5 text-acent-secondary ">Delivery App
+                            <i style="font-size: 220px;" class=" fas fa-motorcycle text-acent-secondary" ></i>
+                        </h1>
+                        
+                   </div> 
+                </div>
+
+                <div class=" col-lg-7 col-md-6 " >
+
+                    <h1 style="color: rgb(87, 87, 87);">Iniciar sesion</h1>
+
+                    <div *ngIf="notMatch" class="alert alert-warning mt-4 animated fadeIn">
+                        Ha ocurrido un error al iniciar sesión! 
+                        <i class="fas fa-exclamation-triangle mx-2"></i>
+                    </div>
+                    
+                    <div class="auth-container ">
+                        <b class="mt-2 pt-3">Introduce tus datos para iniciar sesión</b>
+                    
+                    <div class="col-12 mt-4">
+                        <div class="form-floating mb-4">
+                            <input formControlName="email" type="text" id="email" class="form-control mb-3" placeholder="email">
+                            <label for="email">Email</label>
+                        </div>                  
+                        <div class="form-floating mb-4">
+                            <input formControlName="pass" type="password" id="pass" class="form-control mb-3" placeholder="contraseña">
+                            <label for="pass">Contraseña</label>
+                        </div>
+                        
+                    </div>
+        
+                    <div class="text-center mt-4 col-12">
+                        <button [disabled]="form.invalid || logining" type="submit" class="btn btn-acent w-50">
+                            {{!logining? 'Iniciar sesion': 'Iniciando...'}}
+                            <i *ngIf="logining" class="mx-2 fas fa-sync fa-spin"></i>
+                        </button>
+                        <p class="mt-4">Aun no tienes cuenta?
+                            <b style="cursor: pointer;" routerLink="/auth/register" class="text-acent">
+                                Registrate. 
+                            </b>
+                        </p>
+    
+                    </div>
+                    </div>
+            </div>
+           </div>
+
+        </form>
+
+        
+    </div>
+   
+</div>

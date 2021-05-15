@@ -1,1 +1,76 @@
-<p>register works!</p>
+
+<div class="animated fadeIn p-3 " style="text-align: center;" >
+
+    <h1 style="color: rgb(87, 87, 87);">Registrarse</h1>
+    <div  class="mt-1" style="max-width: 860px; display: inline-block;">
+
+        <div *ngIf="emailRepeat" class="alert alert-warning mt-4 animated fadeIn">
+            El email introducido ya está en uso! 
+            <i class="fas fa-exclamation-triangle mx-2"></i>
+        </div>
+
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="createUser(form.value)" >
+    
+            <div class=" auth-container ">
+
+                <b class=" ">Introduce tus datos para iniciar sesión</b>
+                <div class=" row mt-4">
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-floating mb-4">
+                             
+                            <input formControlName="name" type="text" id="name" class="form-control mb-3" placeholder="nombre">
+                            <label for="name">Nombre</label>
+                        </div> 
+                        <div class="form-floating mb-4">
+                            <input formControlName="lastName" type="text" id="lastName" class="form-control mb-3" placeholder="apellido">     
+                            <label for="lastName">Apellido</label>
+                        </div> 
+                        <div class="form-floating mb-4">
+                            <input formControlName="user" minlength="6" type="text" id="user" class="form-control mb-3" placeholder="usuario">           
+                            <label for="user">Usuario</label>
+                            
+                        </div> 
+                        
+                        
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="form-floating mb-4">
+                            <input formControlName="email" type="text" id="email" class="form-control mb-3" placeholder="email">
+                            <label for="email">Email</label>
+                            
+                        </div> 
+                        <div class="form-floating mb-4">
+                            
+                            <input formControlName="pass" minlength="8" type="password" id="pass" class="form-control mb-3" placeholder="contraseña">
+                            <label  for="pass">Contraseña</label>
+                        </div> 
+                        <div class="form-floating mb-4">
+                            
+                            <input formControlName="phone" minlength="10" type="text" id="phone" class="form-control mb-3" placeholder="telefono">
+                            <label for="phone">Telefono</label>
+                            
+                        </div>                     
+                   
+                    </div>
+        
+                    <div class="text-center mt-4 col-12">
+                        <button [disabled]="form.invalid || signining" type="submit" class="btn btn-acent w-50">
+                            {{!signining? 'Hacer registro': 'Registrando...'}}
+                            <i *ngIf="signining" class="mx-2 fas fa-sync fa-spin"></i>
+                        </button>
+                        <p class="mt-4">Ya tienes una cuenta?
+                            <b style="cursor: pointer;" routerLink="/auth/login" class="text-acent">
+                                Inicia sesion.
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        
+
+    </div>
+   
+</div>
