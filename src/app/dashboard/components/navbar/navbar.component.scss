@@ -1,0 +1,11 @@
+.navbar{
+    background-color: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(7px);
+    -o-backdrop-filter: blur(7px);
+    -moz-backdrop-filter: blur(7px);
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    backdrop-filter: blur(7px);
+}

@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   
   createForm() {
     this.form = this.formBluider.group({
-      user: ['', Validators.required],
+      user: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9_]*')]],
       name: ['', Validators.required],
       lastName: ['', Validators.required],
       phone: ['', Validators.required],

@@ -41,7 +41,6 @@ $acent-blue: rgb(69, 82, 110);
 .btn{
     border-radius: 12px !important;
     transition: all 0.15s linear;
-    
 }
 
 label{
@@ -65,7 +64,9 @@ label{
 
 body{
     // font-family: 'Quicksand', sans-serif !important ;  
+    // background-image: url('../../../../../../Pictures/una-taza-de-javascript.png');
     font-family: 'Rambla', sans-serif;
+
 }
 
 a:hover{
@@ -94,15 +95,7 @@ button{
     
 }
 
-.navbar{
-    border-radius: 20px;
-    
-    background-color: white;
-    // padding-top: 20px;
-    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.10);
-    font-size: 24px !important;
-    
-}
+
 
 .emp-card{
     
@@ -112,22 +105,6 @@ button{
     // padding-top: 20px;
     box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.10);
     
-}
-
-.navbar-element-active {
-    color: $acent;
-}
-
-.navbar-element-inactive{
-    color: $acent-secondary;
-}
-
-
-.navbar-element-inactive :hover{
-    transform: scale(1.04) !important;
-}
-.navbar-element-active :hover{
-    transform: scale(1.04) !important;
 }
 
 .text-acent{
@@ -195,7 +172,22 @@ button{
       opacity: 1;
     }
   }
-  
   .fadeIn {
     animation-name: fadeIn;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  
+  
+  
+  .fadeOut {
+    animation-name: fadeOut;
   }

@@ -1,11 +1,13 @@
-<div class="animted fadeIn">
+<app-navbar class="fixed-top"></app-navbar>
 
+<div class="container animted fadeIn" style="margin-top: 70px;">
     <h1>HOME!</h1>
 
-    <div  >
-
+    <div>
         <app-product-card></app-product-card>
-
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        
     </div>
     
     <button (click)="logout()" class="btn btn-danger">Cerrar sesión</button>
