@@ -8,10 +8,18 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductCardComponent, NavbarComponent],
+  declarations: [
+    HomeComponent,
+    ProductCardComponent,
+    NavbarComponent],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+  ],
+  exports: [
+    HomeComponent,
+    NavbarComponent
   ]
 })
+  
 export class DashboardModule { }

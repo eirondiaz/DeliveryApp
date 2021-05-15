@@ -9,6 +9,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarGGComponent } from './layouts/navbar-gg/navbar-gg.component'
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,14 @@ import { NavbarGGComponent } from './layouts/navbar-gg/navbar-gg.component'
     AuthLayoutComponent,
     DashboardLayoutComponent,
     NavbarGGComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
