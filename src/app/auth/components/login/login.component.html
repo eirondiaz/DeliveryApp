@@ -1,16 +1,17 @@
 
 <div class="animated fadeIn p-3 " style="text-align: center;" >
 
-    
 
     <div class="mt-4" >
         <form autocomplete="off" [formGroup]="form" (ngSubmit)="login(form.value)" >
-            <div class="row "> 
+            <div class="row " > 
 
-                <div class=" col-lg-5 col-md-6 d-none d-sm-block d-sm-none d-md-block text-center"  style="font-size: 240px;">
-                   
-                   <div class="mt-5">
-                    <i class=" fas fa-hamburger text-acent-secondary" ></i>
+                <div class=" col-lg-5 col-md-6 d-none d-sm-block d-sm-none d-md-block text-center"  >
+                    <div class="mt-5">
+                        <h1 class="p-5 text-acent-secondary ">Delivery App
+                            <i style="font-size: 220px;" class=" fas fa-motorcycle text-acent-secondary" ></i>
+                        </h1>
+                        
                    </div> 
                 </div>
 
@@ -26,12 +27,12 @@
                     <div class="auth-container ">
                         <b class="mt-2 pt-3">Introduce tus datos para iniciar sesión</b>
                     
-                    <div class="col-12 mt-3">
-                        <div class="form-floating mb-3">
+                    <div class="col-12 mt-4">
+                        <div class="form-floating mb-4">
                             <input formControlName="email" type="text" id="email" class="form-control mb-3" placeholder="email">
                             <label for="email">Email</label>
                         </div>                  
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-4">
                             <input formControlName="pass" type="password" id="pass" class="form-control mb-3" placeholder="contraseña">
                             <label for="pass">Contraseña</label>
                         </div>

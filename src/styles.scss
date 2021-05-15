@@ -41,6 +41,8 @@ $acent-blue: rgb(69, 82, 110);
 }
 .btn{
     border-radius: 12px !important;
+    transition: all 0.15s linear;
+    
 }
 
 label{
@@ -63,8 +65,8 @@ label{
 }
 
 body{
-    font-family: 'Quicksand', sans-serif !important ;  
-  
+    // font-family: 'Quicksand', sans-serif !important ;  
+    font-family: 'Rambla', sans-serif;
 }
 
 a:hover{
@@ -169,14 +171,6 @@ button{
 
 //cardStyles
 
-.product-card img {
-    transition: all 0.15s linear;
-    position: relative;
-}
-
-.product-card img:hover {
-    transform: scale(1.01);
-}
 
 /* Animaciones */
 .animated {
