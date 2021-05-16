@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
@@ -15,7 +16,9 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        data: {role: 'AUTH'},
         path: 'auth',
+        canActivate: [AuthGuard],
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       }
     ]
@@ -31,6 +34,8 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
+        data: {role: 'USER_ROLE'},
+        canActivate: [AuthGuard],
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       }
     ]
@@ -46,6 +51,8 @@ const routes: Routes = [
       },
       {
         path: 'admin',
+        canActivate: [AuthGuard],
+        data: {role: 'ADMIN_ROLE'},
         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
       }
     ]
