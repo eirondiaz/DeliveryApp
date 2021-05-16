@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-import { Injectable } from '@angular/core';
-=======
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
->>>>>>> lewis
 
 @Injectable({
   providedIn: 'root'
 })
-<<<<<<< HEAD
-export class DataService {
-
-  constructor() { }
-=======
 export class AuthService {
 
   constructor(private http: HttpClient) { }
@@ -27,6 +18,4 @@ export class AuthService {
   login(user: any) {
     return this.http.post<any>(`${this.urlAPI}/login`, user)
   }
-
->>>>>>> lewis
 }
