@@ -5,12 +5,14 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { HistoryComponent } from './components/history/history.component';
 import { AccountComponent } from './components/account/account.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ViewComponent } from './components/view/view.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'cart', component: CartComponent },
   { path: 'account', component: AccountComponent},
+  { path: 'view/:id', component: ViewComponent},
   { path: '**', pathMatch: 'full', redirectTo: '/dashboard/home' },
 ];
 

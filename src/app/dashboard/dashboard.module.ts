@@ -9,6 +9,7 @@ import { AccountComponent } from './components/account/account.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HistoryComponent } from './components/history/history.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ViewComponent } from './components/view/view.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CartComponent } from './components/cart/cart.component';
     AccountComponent,
     OrdersComponent,
     HistoryComponent,
-    CartComponent],
+    CartComponent,
+    ViewComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

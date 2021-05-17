@@ -1,5 +1,5 @@
 
-    <div class="product-card animated fadeIn mb-3">
+    <div [routerLink]="['/dashboard/view', productData._id]" class="product-card animated fadeIn mb-3">
         <div class="product-img-container">
             <img class="product-img card-img" src="../../../../assets/hamburguesa.jpg" alt="Imagen representativa del producto {{productData.name}}">
         </div>
@@ -13,12 +13,11 @@
                 {{productData.desc}}
             </p>
             <div style="overflow: hidden;" >              
-                <button 
-                class="card-footer-element btn btn-acent">
-                    Hacer pedido 
-                    
-                    ( {{productData.price}} )        
-                </button>            
+                <h5 class="mx-2 card-footer-element text-acent">           
+                    <strong>                        
+                        ${{productData.price}}    
+                    </strong> 
+                </h5>            
             </div>
         </div>
     </div>

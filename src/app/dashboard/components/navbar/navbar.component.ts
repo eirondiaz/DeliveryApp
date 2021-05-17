@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   checkRoute() {
     let urlProv = '/dashboard'
-    if (this.router.url===`${urlProv}/home`) {      
+    if (this.router.url===`${urlProv}/home` || this.router.url.includes(`${urlProv}/view`)) {      
       this.homeActive = true
     }
     if (this.router.url===`${urlProv}/orders`) {      

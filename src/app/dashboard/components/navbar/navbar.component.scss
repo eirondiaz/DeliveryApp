@@ -1,4 +1,4 @@
-$blur: blur(20px);
+$blur: blur(18px);
 $acent: rgb(250, 88, 48);
 $acent-secondary: rgb(250, 145, 119);
 
@@ -16,7 +16,9 @@ $acent-secondary: rgb(250, 145, 119);
     padding-left: 10%;
     padding-right: 10%;
     backdrop-filter: $blur;
-    border: none;
+    border: solid 0.02px rgba(209, 209, 209, 0.3);
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.12);
+
 }
 
 i:focus{
