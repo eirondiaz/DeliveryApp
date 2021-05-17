@@ -19,6 +19,11 @@ $acent-secondary: rgb(250, 145, 119);
     border: none;
 }
 
+i:focus{
+    outline: none;
+    border: none;
+}
+
 .navbar-active{
     color: $acent;
     cursor: pointer;
