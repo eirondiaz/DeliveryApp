@@ -16,30 +16,33 @@ export class HomeComponent implements OnInit {
 
   products: Product[] = [
     {
-      _id: '123',
-      name: 'Pollo con papas',
-      price: 100,
-      desc: 'Pollo con papas y ketchup',    
-    },
-    {
-      _id: '456',
-      name: 'Pollo con tostones',
+      _id: '1',
+      name: 'hamburguesa',
+      photo: '../../../../assets/hamburguesa.jpg',
       price: 150,
-      desc: 'Pollo con tostones y ketchup',
-    },
+      desc: 'hamburguesa con papas',    
+    },    
     {
-      _id: '789',
+      _id: '2',
+      name: 'Pechuga a la plancha',
+      photo: '../../../../assets/pechuga_a_la_plancha.jpg',
+      price: 250,
+      desc: 'pechuga a la plancha con ensalada',    
+    },    
+    {
+      _id: '3',
       name: 'Pollo con papas',
+      photo: '../../../../assets/pollo_con_papas.jpg',
       price: 100,
-      desc: 'Pollo con papas y ketchup',    
-    },
+      desc: 'pollo con papas fritas',    
+    },    
     {
-      _id: '987',
-      name: 'Pollo con tostones',
+      _id: '4',
+      name: 'sandwich',
+      photo: '../../../../assets/sandwich.jpg',
       price: 150,
-      desc: 'Pollo con tostones y ketchup',
-    },
-    
+      desc: 'Sandwich de pollo',    
+    },    
   ]
   filteredProducts: Product[] = []
   searching = false

@@ -19,8 +19,8 @@
 
                     <h1 style="color: rgb(87, 87, 87);">Iniciar sesion</h1>
 
-                    <div *ngIf="notMatch" class="alert alert-warning mt-4 animated fadeIn">
-                        Ha ocurrido un error al iniciar sesión! 
+                    <div *ngIf="notMatch || notFound" class="alert alert-warning mt-4 animated fadeIn">
+                        {{notMatch? 'Contraseña incorrecta': 'Email incorrecto'}}
                         <i class="fas fa-exclamation-triangle mx-2"></i>
                     </div>
                     

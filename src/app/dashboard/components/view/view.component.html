@@ -1,42 +1,56 @@
-<div class="container animted fadeIn" >
+<div class="container animated fadeIn" >
 
     <h1 style="display: inline-block;" class="mt-3">Ver producto</h1>
     <hr class="mb-4">
     <div class="row">
-        <div class="col-lg-5 mb-3">
-            <img class="card-img" src="../../../../assets/hamburguesa.jpg" alt="Imagen representativa del producto ">
+        <div class="col-lg-5 mb-4">
+            <img class="card-img" [src]="prod.photo" alt="Imagen representativa del producto {{prod.name}}">
         </div>
         <div  class="col-lg-6 offset-lg-1">
             <h2>
                 <strong>
-                    Hamburguesa
+                    {{prod.name}}
                 </strong>
             </h2>
             <hr class="mt-1 mb-4">
             <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam quidem quibusdam distinctio recusandae! Hic non praesentium aliquid cumque veritatis et labore! Amet, commodi sed? Voluptate quod id tenetur in sapiente?
+                {{prod.desc}}
             </p>
             <div class="row">
                 <div class="col-6">
 
                     <h5 >
                         Cantidad: 
-                        <strong class="text-acent">00</strong>
+                        <strong class="text-acent">{{QTY}}</strong>
                     </h5>
                 </div>
                 <div class="col-6">
                     <h5 class="float-end">
                         Total
-                        <strong class="text-acent">$300</strong>
+                        <strong class="text-acent">${{prod.price * QTY}}</strong>
                     </h5>
                 </div>
             </div>
 
 
             <div class="text-center w-10 mt-3">
-                <i style="font-size: 24px;" class="align-middle text-acent fas fa-minus-circle"></i>
-                <button class="w-50 btn btn-acent mx-2">Ordenar</button>
-                <i style="font-size: 24px;" class="align-middle text-acent fas fa-plus-circle"></i>
+                <button (click)="minus()"
+                class="noHvr" [disabled]="QTY == 1 ">
+                    <i  style="font-size: 24px; " class="align-middle fas fa-minus-circle text-acent"
+                    [class.text-acent-secondary]="QTY == 1"
+                    [style.cursor]="QTY == 1? 'not-allowed': 'pointer'"
+                    ></i>
+                </button>
+
+                <button class="w-50 btn btn-acent mx-2">Agregar al carrito</button>
+                
+                <button (click)="plus()"
+                class="noHvr" [disabled]="QTY == 10 ">
+                    <i  style="font-size: 24px; " class="align-middle fas fa-plus-circle text-acent"
+                    [class.text-acent-secondary]="QTY == 10"
+                    [style.cursor]="QTY == 10? 'not-allowed': 'pointer'"
+                    ></i>
+                </button>
             </div>
         </div>
     </div>

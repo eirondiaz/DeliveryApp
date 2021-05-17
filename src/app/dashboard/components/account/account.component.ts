@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-account',
@@ -14,8 +15,17 @@ export class AccountComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('token')
-    this.router.navigate(['/auth/login'])
+    Swal.fire({
+      icon: 'question',
+      title: 'Cerrar sesión',
+      text: 'Seguro que desea cerrar sesión?',
+      showConfirmButton: true,
+      confirmButtonColor: '#fa5830 '
+    }).then(x => {
+      if (x.isConfirmed) {        
+        localStorage.removeItem('token')
+        this.router.navigate(['/auth/login'])
+      }
+    })
   }
-
 }

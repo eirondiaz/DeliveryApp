@@ -1,23 +1,23 @@
 
-    <div [routerLink]="['/dashboard/view', productData._id]" class="product-card animated fadeIn mb-3">
-        <div class="product-img-container">
-            <img class="product-img card-img" src="../../../../assets/hamburguesa.jpg" alt="Imagen representativa del producto {{productData.name}}">
-        </div>
-        <div class="product-card-body">
-            <h3 class="text-capitalized">
-                <strong>
-                    {{productData.name}}
-                </strong>
-            </h3>
-            <p class="product-desc">
-                {{productData.desc}}
-            </p>
-            <div style="overflow: hidden;" >              
-                <h5 class="mx-2 card-footer-element text-acent">           
-                    <strong>                        
-                        ${{productData.price}}    
-                    </strong> 
-                </h5>            
-            </div>
+<div [routerLink]="['/dashboard/view', productData._id]" class="product-card animated fadeIn mb-3">
+    <div class="product-img-container">
+        <img class="product-img card-img" [src]="productData.photo" alt="Imagen representativa del producto {{productData.name}}">
+    </div>
+    <div class="product-card-body">
+        <h3 class="text-capitalized">
+            <strong>
+                {{productData.name}}
+            </strong>
+        </h3>
+        <p class="product-desc">
+            {{productData.desc}}
+        </p>
+        <div style="overflow: hidden;" >              
+            <h5 class="mx-2 card-footer-element text-acent">           
+                <strong>                        
+                    ${{productData.price}}    
+                </strong> 
+            </h5>            
         </div>
     </div>
+</div>

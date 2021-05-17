@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   
   logining = false
   notMatch = false
+  notFound = false
   login(form: any) {
     this.logining = true
     this.dataService.login(form).subscribe(
@@ -36,9 +37,15 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/dashboard/home'])
       },
       error => {
-        console.log(error)
+        console.log(error.error.msg)
+
         this.logining = false
-        this.notMatch = true
+        if (error.error.msg == 'user not found') {
+          this.notFound = true          
+        } else if (error.error.msg == 'pass not match') {
+          
+          this.notMatch = true
+        }
       }
     )
   }

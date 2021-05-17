@@ -37,8 +37,6 @@ export class NavbarComponent implements OnInit {
   accountActive
   
   changePage(id: any) {
-    console.log(id)
-
     if (id === 'home') {
       this.homeActive = true
       this.ordersActive = false
