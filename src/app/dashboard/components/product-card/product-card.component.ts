@@ -11,11 +11,7 @@ export class ProductCardComponent implements OnInit {
   constructor() { }
 
   @Input() public productData: Product = {
-    _id: '',
-    photo:'',
-    name: '',
-    price: 0,
-    desc: ''
+    
   }
 
   ngOnInit(): void {

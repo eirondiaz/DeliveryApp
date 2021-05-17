@@ -1,20 +1,20 @@
 <div class="container animated fadeIn" >
 
-    <h1 style="display: inline-block;" class="mt-3">Ver producto</h1>
+    <h1 style="display: inline-block;" class="mt-3">Ver productucto</h1>
     <hr class="mb-4">
     <div class="row">
         <div class="col-lg-5 mb-4">
-            <img class="card-img" [src]="prod.photo" alt="Imagen representativa del producto {{prod.name}}">
+            <img class="card-img" [src]="product.photo" alt="Imagen representativa del productucto {{product.name}}">
         </div>
         <div  class="col-lg-6 offset-lg-1">
             <h2>
                 <strong>
-                    {{prod.name}}
+                    {{product.name}}
                 </strong>
             </h2>
             <hr class="mt-1 mb-4">
             <p>
-                {{prod.desc}}
+                {{product.desc}}
             </p>
             <div class="row">
                 <div class="col-6">
@@ -27,7 +27,7 @@
                 <div class="col-6">
                     <h5 class="float-end">
                         Total
-                        <strong class="text-acent">${{prod.price * QTY}}</strong>
+                        <strong class="text-acent">${{product.price * QTY}}</strong>
                     </h5>
                 </div>
             </div>
