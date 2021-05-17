@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
     this.logining = true
     this.dataService.login(form).subscribe(
       res => {
-        console.log(res);
         localStorage.setItem('token', res.token)
         this.router.navigate(['/dashboard/home'])
       },

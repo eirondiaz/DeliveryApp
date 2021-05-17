@@ -3,6 +3,18 @@
     <h1 style="display: inline-block;" class="mt-3">Cuenta</h1>
     <hr class="mb-4">
 
-    <button (click)="logout()" class="btn btn-danger">Cerrar sesión</button>
+    <div class="row">
+        <div class="col-8">
+            <h2>{{userData.name}} {{userData.lastName}}</h2>
+            <h6>
+                <strong>@{{userData.user}}</strong>
+            </h6>
+        </div>
+
+        <div class="col-4">
+            <button (click)="logout()" class="float-end btn btn-danger">Cerrar sesión</button>
+
+        </div>
+    </div>
 
 </div>

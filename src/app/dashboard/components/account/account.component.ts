@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/auth/models/user.model';
 import Swal from 'sweetalert2';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-account',
@@ -9,7 +11,9 @@ import Swal from 'sweetalert2';
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private data: UserService) {
+    this.getCurrentUser()
+  }
 
   ngOnInit(): void {
   }
@@ -27,5 +31,14 @@ export class AccountComponent implements OnInit {
         this.router.navigate(['/auth/login'])
       }
     })
+  }
+
+  userData: User = {}
+  getCurrentUser() {
+    this.data.getCurrentUser().subscribe(
+      res => {
+        this.userData = res.data
+      }
+    )
   }
 }

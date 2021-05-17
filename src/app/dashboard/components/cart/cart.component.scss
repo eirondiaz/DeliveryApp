@@ -1,0 +1,47 @@
+$acent: rgb(250, 88, 48);
+
+.borders-acent{
+    border: 0.8px solid $acent;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+h5{
+    font-size: 18px;
+}
+
+.address-card{
+    border-radius: 18px;
+    border: 0.7px solid rgb(31, 31, 31);
+    padding: 14px;
+    color: rgb(31, 31, 31);
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.address-card-selected{
+    border-radius: 18px;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.20);
+    border: 1.2px solid $acent;
+    padding: 14px;
+    color: rgb(31, 31, 31);
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.address-card-selected h5{
+    color: $acent;
+    font-weight: bold;
+}
+
+.product-list-card{
+    border-radius: 18px;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.20);
+    
+}
+
+.product-list-card-body{
+    padding: 20px;
+    
+}
+

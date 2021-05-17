@@ -12,4 +12,9 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  adr = true
+  changeAddress() {
+    this.adr = !this.adr
+  }
+
 }
