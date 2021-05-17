@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AccountComponent } from './components/account/account.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { HistoryComponent } from './components/history/history.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HistoryComponent } from './components/history/history.component';
     NavbarComponent,
     AccountComponent,
     OrdersComponent,
-    HistoryComponent],
+    HistoryComponent,
+    CartComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

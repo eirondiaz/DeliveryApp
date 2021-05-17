@@ -12,8 +12,9 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   form:FormGroup
-  constructor( private dataService: AuthService, private formBluider: FormBuilder, private router: Router) { 
-
+  constructor(private dataService: AuthService,
+    private formBluider: FormBuilder,
+    private router: Router) {
     this.createForm()
   }
   

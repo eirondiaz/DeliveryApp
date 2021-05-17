@@ -5,8 +5,8 @@
     <i id="orders" #orders (click)="changePage(orders.id)" [routerLink]="['/dashboard/orders']" 
     class="navbar-inactive fas fa-motorcycle" [ngClass]="{'navbar-active': ordersActive, 'navbar-inactive':!ordersActive}"></i>
     
-    <i id="history" #history (click)="changePage(history.id)" [routerLink]="['/dashboard/history']" 
-    class="navbar-inactive fas fa-clipboard" [ngClass]="{'navbar-active': historyActive, 'navbar-inactive':!historyActive}"></i>
+    <i id="cart" #cart (click)="changePage(cart.id)" [routerLink]="['/dashboard/cart']" 
+    class="navbar-inactive fas fa-shopping-cart" [ngClass]="{'navbar-active': cartActive, 'navbar-inactive':!cartActive}"></i>
     
     <i id="account" #account (click)="changePage(account.id)" [routerLink]="['/dashboard/account']" 
     class="navbar-inactive fas fa-user" [ngClass]="{'navbar-active': accountActive, 'navbar-inactive':!accountActive}"></i>

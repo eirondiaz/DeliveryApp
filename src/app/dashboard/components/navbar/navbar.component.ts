@@ -16,7 +16,6 @@ export class NavbarComponent implements OnInit {
   }
 
   checkRoute() {
-    console.log(this.router.url)
     let urlProv = '/dashboard'
     if (this.router.url===`${urlProv}/home`) {      
       this.homeActive = true
@@ -24,8 +23,8 @@ export class NavbarComponent implements OnInit {
     if (this.router.url===`${urlProv}/orders`) {      
       this.ordersActive = true
     }
-    if (this.router.url===`${urlProv}/history`) {      
-      this.historyActive = true
+    if (this.router.url===`${urlProv}/cart`) {      
+      this.cartActive = true
     }
     if (this.router.url===`${urlProv}/account`) {      
       this.accountActive = true
@@ -34,7 +33,7 @@ export class NavbarComponent implements OnInit {
   
   homeActive 
   ordersActive 
-  historyActive
+  cartActive
   accountActive
   
   changePage(id: any) {
@@ -43,28 +42,28 @@ export class NavbarComponent implements OnInit {
     if (id === 'home') {
       this.homeActive = true
       this.ordersActive = false
-      this.historyActive = false
+      this.cartActive = false
       this.accountActive = false
     }
 
     if (id === 'orders') {
       this.homeActive =  false
       this.ordersActive =  true
-      this.historyActive = false
+      this.cartActive = false
       this.accountActive = false      
     }
 
-    if (id === 'history') {
+    if (id === 'cart') {
       this.homeActive =  false
       this.ordersActive =  false
-      this.historyActive =  true
+      this.cartActive =  true
       this.accountActive = false      
     }
 
     if (id === 'account') {
       this.homeActive =  false
       this.ordersActive = false
-      this.historyActive = false 
+      this.cartActive = false 
       this.accountActive =  true     
     }
   }
