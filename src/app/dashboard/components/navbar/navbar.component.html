@@ -1,6 +1,13 @@
 <div class="navbar">
-    <i class="navbar-active fas fa-home"></i>
-    <i class="navbar-inactive fas fa-motorcycle"></i>
-    <i class="navbar-inactive fas fa-clipboard"></i>
-    <i class="navbar-inactive fas fa-user"></i>
+    <i id="home" #home (click)="changePage(home.id)" [routerLink]="['/dashboard/home']" 
+    class="navbar-active fas fa-home" [ngClass]="{'navbar-active': homeActive, 'navbar-inactive':!homeActive}"></i>
+    
+    <i id="orders" #orders (click)="changePage(orders.id)" [routerLink]="['/dashboard/orders']" 
+    class="navbar-inactive fas fa-motorcycle" [ngClass]="{'navbar-active': ordersActive, 'navbar-inactive':!ordersActive}"></i>
+    
+    <i id="history" #history (click)="changePage(history.id)" [routerLink]="['/dashboard/history']" 
+    class="navbar-inactive fas fa-clipboard" [ngClass]="{'navbar-active': historyActive, 'navbar-inactive':!historyActive}"></i>
+    
+    <i id="account" #account (click)="changePage(account.id)" [routerLink]="['/dashboard/account']" 
+    class="navbar-inactive fas fa-user" [ngClass]="{'navbar-active': accountActive, 'navbar-inactive':!accountActive}"></i>
 </div>

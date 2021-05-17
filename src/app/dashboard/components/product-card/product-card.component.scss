@@ -14,17 +14,19 @@
 }
 
 .product-img:hover{
-    margin-bottom: 4px;
     border-bottom-left-radius: 18px !important;
     border-bottom-right-radius: 18px !important;    
 }
 
 .product-img-container :only-child{
     padding-bottom: 6px;
+    
 }
 
 .product-card-body{
     margin-top: 4px;
+    transition: all 0.15s linear;
+
 }
 .product-card-body strong, p:hover{
     transform: scale(1.005);
@@ -37,6 +39,7 @@
 
 .product-desc{
     color: rgb(97, 97, 97);
+    transition: all 0.15s linear;
     transition: all 0.15s linear;
 
 }
@@ -51,6 +54,8 @@
 .btn:hover{
     box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.15);
     margin-right: 3px;
+    transition: all 0.15s linear;
+
 }
 
 .product-card img:hover {
@@ -62,3 +67,6 @@
     float: right; 
     bottom: 0;
 }
+$blur: blur(20px);
+
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,57 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout() {
-    localStorage.removeItem('token')
-    this.router.navigate(['/auth/login'])
-  }
+  products: Product[] = [
+    {
+      name: 'Pollo con papas',
+      price: 100,
+      desc: 'Pollo con papas y ketchup',    
+    },
+    {
+      name: 'Pollo con tostones',
+      price: 150,
+      desc: 'Pollo con tostones y ketchup',
+    },
+    {
+      name: 'Pollo con papas',
+      price: 100,
+      desc: 'Pollo con papas y ketchup',    
+    },
+    {
+      name: 'Pollo con tostones',
+      price: 150,
+      desc: 'Pollo con tostones y ketchup',
+    },
+    {
+      name: 'Pollo con papas',
+      price: 100,
+      desc: 'Pollo con papas y ketchup',    
+    },
+    {
+      name: 'Pollo con tostones',
+      price: 150,
+      desc: 'Pollo con tostones y ketchup',
+    },
+    {
+      name: 'Pollo con papas',
+      price: 100,
+      desc: 'Pollo con papas y ketchup',    
+    },
+    {
+      name: 'Pollo con tostones',
+      price: 150,
+      desc: 'Pollo con tostones y ketchup',
+    },
+    {
+      name: 'Pollo con papas',
+      price: 100,
+      desc: 'Pollo con papas y ketchup',    
+    },
+    {
+      name: 'Pollo con tostones',
+      price: 150,
+      desc: 'Pollo con tostones y ketchup',
+    },
+  ]
 
 }

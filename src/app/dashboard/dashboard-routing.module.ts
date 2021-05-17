@@ -1,10 +1,16 @@
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OrdersComponent } from './components/orders/orders.component';
+import { HistoryComponent } from './components/history/history.component';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'orders', component: OrdersComponent },
+  { path: 'history', component: HistoryComponent },
+  { path: 'account', component: AccountComponent},
   { path: '**', pathMatch: 'full', redirectTo: '/dashboard/home' },
-  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({

@@ -1,23 +1,23 @@
 
     <div class="product-card animated fadeIn fast mb-3">
         <div class="product-img-container">
-            <img class="product-img card-img" src="../../../../assets/hamburguesa.jpg" alt="">
+            <img class="product-img card-img" src="../../../../assets/hamburguesa.jpg" alt="Imagen del producto {{productData.name}}">
         </div>
         <div class="product-card-body">
             <h3 class="text-capitalized">
                 <strong>
-                    Hamburguesa
+                    {{productData.name}}
                 </strong>
             </h3>
             <p class="product-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facere obcaecati dignissimos, fugiat delectus enim quis omnis explicabo expedita, tempora nam quas tenetur dolores et. Soluta quod voluptatum quaerat earum.
+                {{productData.desc}}
             </p>
             <div style="overflow: hidden;" >              
                 <button 
                 class="card-footer-element btn btn-acent">
                     Hacer pedido 
                     
-                    ( $150.00 )        
+                    ( {{productData.price}} )        
                 </button>            
             </div>
         </div>
