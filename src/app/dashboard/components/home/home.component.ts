@@ -66,5 +66,12 @@ export class HomeComponent implements OnInit {
       desc: 'Pollo con tostones y ketchup',
     },
   ]
+  filteredProducts: Product[] = []
+  searching = false
+
+  search(termino: string) {
+    this.searching = true
+    this.filteredProducts = this.products.filter((x: Product) => x.name.toLowerCase().includes(termino.toLowerCase()))
+  }
 
 }

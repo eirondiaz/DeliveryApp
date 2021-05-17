@@ -1,16 +1,32 @@
 
 <div class="container animted fadeIn" >
+    
+    <h1 style="display: inline-block;" class="mt-3">Productos</h1>
+    <div class="mt-3 float-end" style="display: inline-block; ">
 
-    <h1 class="mt-3">Productos</h1>
+        <input id="search" #termino (keyup)="search(termino.value.trim())" type="text" class=" form-control" placeholder="Buscar producto">
+    </div>
     <hr class="mb-4">
-    <div class="row">
+    
+    <div class="animated fadeIn fast alert alert-warning"*ngIf="filteredProducts.length === 0 && searching">
+        Su termminp de busqueda no coincide con ningún producto
+    </div>
+
+    <div class="row" *ngIf="!searching">
 
         <app-product-card 
             *ngFor="let product of products" [productData]="product"
-
-            class="col-lg-4 col-md-6 col-sm-6 col-12">
+            class="animated fadeIn fast  col-lg-4 col-md-6 col-sm-6 col-12">
         </app-product-card>
-            
+
+    </div>
+
+    <div class="row" *ngIf="searching">
+
+        <app-product-card 
+            *ngFor="let filteredProduct of filteredProducts" [productData]="filteredProduct"
+            class="animated fadeIn fast  col-lg-4 col-md-6 col-sm-6 col-12">
+        </app-product-card>
         
     </div>
     
