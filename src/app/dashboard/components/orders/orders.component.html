@@ -4,17 +4,25 @@
     <hr class="mb-4">
 
     <div class="row">
-        <div class="text-center col-3 tab-not">
+
+        <div
+        id="ordered" (click)="changeTab(ordered.id)" #ordered class=" col-3 text-center"
+        [ngClass]="orderedActive? 'tab-set': 'tab-not'"
+        >
             Ordenado
         </div>
-        <div class="text-center col-3 tab-set">
+        <div [ngClass]="{'tab-set': acceptedActive,'tab-not':!acceptedActive}"
+        id="accepted" (click)="changeTab(accepted.id)" #accepted class=" col-3 tab-not text-center ">
             Aceptado
         </div>
-        <div class="text-center col-3 tab-not">
-            En trancito
+        <div [ngClass]="{'tab-set': inTransitActive,'tab-not':!inTransitActive}"
+        id="inTransit" (click)="changeTab(inTransit.id)" #inTransit class="col-3  tab-not text-center ">
+            En transito
         </div>
-        <div class=" text-center col-3 tab-not">
-            Enviado
+        <div [ngClass]="{'tab-set': deliveredActive,'tab-not':!deliveredActive}"
+        id="delivered" (click)="changeTab(delivered.id)" #delivered class="col-3 tab-not text-center  ">
+            Recibidas
         </div>
+        
     </div>
 </div>

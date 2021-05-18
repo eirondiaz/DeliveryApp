@@ -1,5 +1,5 @@
 $acent: rgb(250, 88, 48);
-$fz:16px;
+$fz:15px;
 
 .tab-not{
     box-shadow: none;
@@ -12,6 +12,7 @@ $fz:16px;
     font-size: $fz ;
     cursor: pointer;
     padding: 0px;
+    transition: all 0.15s linear;
 }
 
 .tab-set{
@@ -23,5 +24,9 @@ $fz:16px;
     padding-top: 4px;
     padding-bottom: 4px;
     font-size: $fz ;
+    padding-left: 0px;
+    padding-right: 0px;
     cursor: pointer;
+    transition: all 0.15s linear;
 }
+

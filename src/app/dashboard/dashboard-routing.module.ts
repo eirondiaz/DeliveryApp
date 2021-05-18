@@ -6,6 +6,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { AccountComponent } from './components/account/account.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ViewComponent } from './components/view/view.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'account', component: AccountComponent},
   { path: 'view/:id', component: ViewComponent},
+  { path: 'order/:id', component: OrderDetailsComponent},
   { path: '**', pathMatch: 'full', redirectTo: '/dashboard/home' },
 ];
 

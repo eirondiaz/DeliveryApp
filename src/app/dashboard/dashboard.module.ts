@@ -10,6 +10,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { HistoryComponent } from './components/history/history.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ViewComponent } from './components/view/view.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ViewComponent } from './components/view/view.component';
     OrdersComponent,
     HistoryComponent,
     CartComponent,
-    ViewComponent],
+    ViewComponent,
+    OrderDetailsComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
