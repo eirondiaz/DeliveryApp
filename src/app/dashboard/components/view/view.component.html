@@ -32,20 +32,20 @@
                 </div>
             </div>
 
-
             <div class="text-center w-10 mt-3">
-                <button (click)="minus()"
-                class="noHvr" [disabled]="QTY == 1 ">
+                <button (click)="minus()" class="noHvr" [disabled]="QTY == 1 ">
                     <i  style="font-size: 24px; " class="align-middle fas fa-minus-circle text-acent"
                     [class.text-acent-secondary]="QTY == 1"
                     [style.cursor]="QTY == 1? 'not-allowed': 'pointer'"
                     ></i>
                 </button>
 
-                <button class="w-50 btn btn-acent mx-2">Agregar al carrito</button>
+                <button [disabled]="adding" (click)="addToCart()" class="w-50 btn btn-acent mx-2">
+                    {{adding?'Agregando...':'Agregar al carrito'}}
+                    <i *ngIf="adding" class="fas fa-sync fa-spin"></i>
+                </button>
                 
-                <button (click)="plus()"
-                class="noHvr" [disabled]="QTY == 10 ">
+                <button (click)="plus()" class="noHvr" [disabled]="QTY == 10 ">
                     <i  style="font-size: 24px; " class="align-middle fas fa-plus-circle text-acent"
                     [class.text-acent-secondary]="QTY == 10"
                     [style.cursor]="QTY == 10? 'not-allowed': 'pointer'"

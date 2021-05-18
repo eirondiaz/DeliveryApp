@@ -11,6 +11,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ViewComponent } from './components/view/view.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { CartCardComponent } from './components/cart-card/cart-card.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     HistoryComponent,
     CartComponent,
     ViewComponent,
-    OrderDetailsComponent],
+    OrderDetailsComponent,
+    CartCardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

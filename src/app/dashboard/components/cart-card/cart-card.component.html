@@ -1,0 +1,18 @@
+<div class="product-list-card mb-2">
+    <div class="row">
+
+        <div class="col-lg-3 col-4 " >
+            <img class="m-2 card-img" [src]="cartData.product.photo" alt="">
+        </div>
+        <div class="product-list-card-body col-lg-9 col-8">
+            <h5 style="display: inline-block;"> <strong> {{cartData.product.name}}</strong></h5>
+            <i (click)="deleteCart(cartData._id)"
+            style="cursor: pointer; font-size: 20px;" class="float-end fas fa-times mx-3 text-acent"></i>
+            <br>
+            <h6 style="display: inline-block;">Cantidad: 
+                <strong class="text-acent ">{{cartData.quantity}} </strong>
+            </h6>
+            <strong style=" bottom: 0;" class="float-end text-acent mx-3 mt-md-2 mt-lg-4 mt-sm-4">${{cartData.total}}</strong>
+        </div>
+    </div>
+</div>
