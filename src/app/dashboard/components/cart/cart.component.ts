@@ -34,6 +34,7 @@ export class CartComponent implements OnInit {
   provitionalAddress: any
   
   newAddress() {
+    this.newAdr = true
     Swal.fire({
       icon: 'info',
       text: 'Ingrese su direccion provisional: ',
