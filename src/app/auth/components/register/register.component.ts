@@ -18,15 +18,23 @@ export class RegisterComponent implements OnInit {
     this.createForm()
   }
   
+  passIsTheSame = true
   createForm() {
     this.form = this.formBluider.group({
       user: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9_]*')]],
       name: ['', Validators.required],
       lastName: ['', Validators.required],
+      address: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required],
       pass: ['', Validators.required],
+      repPass: ['', Validators.required],
     })
+
+    if (this.form.value.pass !== this.form.value.repPass) {
+      this.form.value.pass.invalid
+      this.passIsTheSame = false
+    }
   }
 
   signining = false

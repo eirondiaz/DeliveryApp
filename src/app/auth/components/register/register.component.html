@@ -9,7 +9,7 @@
             <i class="fas fa-exclamation-triangle mx-2"></i>
         </div>
 
-        <form autocomplete="off" [formGroup]="form" (ngSubmit)="createUser(form.value)" >
+        <form [formGroup]="form" (ngSubmit)="createUser(form.value)" >
     
             <div class=" auth-container ">
 
@@ -31,7 +31,11 @@
                             <label for="user">Usuario</label>
                             
                         </div> 
-                        
+                        <div class="form-floating mb-4">
+                            <input formControlName="address" minlength="5" type="text" id="address" class="form-control mb-3" placeholder="address">           
+                            <label for="address">Dirección</label>
+                            
+                        </div>                         
                         
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -44,6 +48,11 @@
                             
                             <input formControlName="pass" minlength="8" type="password" id="pass" class="form-control mb-3" placeholder="contraseña">
                             <label  for="pass">Contraseña</label>
+                        </div> 
+                        <div class="form-floating mb-4">                            
+                            <input [ngClass]="{'invalid': this.form.value.pass !== this.form.value.repPass ,'': passIsTheSame == true}"
+                            formControlName="repPass" minlength="8" type="password" id="repPass" class="form-control mb-3" placeholder="repetir contraseña">
+                            <label for="repPass">Repita la contraseña</label>
                         </div> 
                         <div class="form-floating mb-4">
                             

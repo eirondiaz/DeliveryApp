@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import Swal from 'sweetalert2';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,8 +10,9 @@ import Swal from 'sweetalert2';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private cartData: CartService) { 
+  constructor(private cartData: CartService, private userData:UserService) { 
     this.getCarts()
+    this.getCurrenUser()
   }
 
   ngOnInit(): void {
@@ -77,6 +79,14 @@ export class CartComponent implements OnInit {
       res => {
         this.getCarts()
       }, error => console.log(error)
+    )
+  }
+  currentUser
+  getCurrenUser(){
+    this.userData.getCurrentUser().subscribe(
+      res => {
+        this.currentUser = res.data
+      }
     )
   }
 
