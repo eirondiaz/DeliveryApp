@@ -34,17 +34,23 @@ export class CartComponent implements OnInit {
   provitionalAddress: any
   
   newAddress() {
-    this.newAdr = true
     Swal.fire({
-      icon: 'info',
+      icon: 'question',
       text: 'Ingrese su direccion provisional: ',
       input: 'text',
       confirmButtonColor: '#fa5830',
-      confirmButtonText: 'Aceptar'
+      showCancelButton: true,
+      cancelButtonText:'Cancelar',
+      confirmButtonText: 'Aceptar',
     }).then(x => {
       if (x.isConfirmed) {
         this.provitionalAddress = x.value
         this.provAddress()
+        this.newAdr = true
+      }
+      if (x.isDenied || x.dismiss || x.isDenied || x.value == '') {
+        this.ownAddress()
+        this.newAdr = false
       }
     })
   }
@@ -56,12 +62,12 @@ export class CartComponent implements OnInit {
   getCarts() {
     this.cartData.getAllCarts().subscribe(
       res => {
-        this.subtotal= 0
+        this.subtotal = 0
         this.descuento = 0
         this.total = 0
         this.cartList = res.data.reverse()
         res.data.map(x => this.subtotal += x.total)
-        this.total = this.subtotal
+        this.total = this.subtotal - this.descuento
       }
     )
   }

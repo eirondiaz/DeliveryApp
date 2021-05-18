@@ -2,7 +2,7 @@
     <i id="home" #home (click)="changePage(home.id)" [routerLink]="['/dashboard/home']" 
     class="navbar-active fas fa-home" [ngClass]="{'navbar-active': homeActive, 'navbar-inactive':!homeActive}"></i>
     
-    <i id="orders" #orders (click)="changePage(orders.id)" [routerLink]="['/dashboard/orders']" 
+    <i style="font-size: 24px !important;" id="orders" #orders (click)="changePage(orders.id)" [routerLink]="['/dashboard/orders']" 
     class="navbar-inactive fas fa-motorcycle" [ngClass]="{'navbar-active': ordersActive, 'navbar-inactive':!ordersActive}"></i>
     
     <i id="cart" #cart (click)="changePage(cart.id)" [routerLink]="['/dashboard/cart']" 

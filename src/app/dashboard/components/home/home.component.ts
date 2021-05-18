@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
   getAllProducts() {
     this.data.getAllProducts().subscribe(
       res => {
-        console.log(res.data)
         this.products = res.data
       }
     )
