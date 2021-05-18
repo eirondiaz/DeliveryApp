@@ -1,11 +1,11 @@
-<div class="product-list-card mb-2">
+<div class=" product-list-card mb-2">
     <div class="row">
 
         <div class="col-lg-3 col-4 " >
             <img class="m-2 card-img" [src]="cartData.product.photo" alt="">
         </div>
         <div class="product-list-card-body col-lg-9 col-8">
-            <h5 style="display: inline-block;"> <strong> {{cartData.product.name}}</strong></h5>
+            <h5 [routerLink]="['/dashboard/view', cartData.product._id]" class="text-capitalize" style="display: inline-block; cursor: pointer;"> <strong> {{cartData.product.name}}</strong></h5>
             <i (click)="deleteCart(cartData._id)"
             style="cursor: pointer; font-size: 20px;" class="float-end fas fa-times mx-3 text-acent"></i>
             <br>

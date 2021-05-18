@@ -21,8 +21,7 @@ export class OrdersComponent implements OnInit {
   deliveredActive
 
   changeTab(status: any) {
-    console.log(status)
-    
+
     if (status === 'ordered') {
       this.orderedActive = true
       this.acceptedActive = false
@@ -48,12 +47,6 @@ export class OrdersComponent implements OnInit {
       this.deliveredActive = true
     }
 
-    console.log(
-      this.orderedActive,
-      this.acceptedActive,
-      this.inTransitActive,
-      this.deliveredActive)
-    
   }
 
 }

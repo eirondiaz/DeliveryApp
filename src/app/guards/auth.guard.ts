@@ -35,7 +35,6 @@ export class AuthGuard implements CanActivate {
     //console.log(route.data.role)
     this.userService.getCurrentUser().subscribe(
       res => {
-        console.log(res)
         if (res.data.role === 'ADMIN_ROLE' && res.data.role !== route.data.role) {
           this.router.navigate(['/admin/home'])
         }
