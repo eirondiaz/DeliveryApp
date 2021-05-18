@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
         this.provAddress()
         this.newAdr = true
       }
-      else /* (x.isDenied || x.dismiss || x.isDenied || x.value == '') */ {
+      else {
         this.ownAddress()
         this.newAdr = false
       }
