@@ -50,7 +50,7 @@
                             <label  for="pass">Contraseña</label>
                         </div> 
                         <div class="form-floating mb-4">                            
-                            <input [ngClass]="{'invalid': this.form.value.pass !== this.form.value.repPass ,'': passIsTheSame == true}"
+                            <input [ngClass]="{'invalid': this.form.value.pass !== this.form.value.repPass }"
                             formControlName="repPass" minlength="8" type="password" id="repPass" class="form-control mb-3" placeholder="repetir contraseña">
                             <label for="repPass">Repita la contraseña</label>
                         </div> 
@@ -64,7 +64,7 @@
                     </div>
         
                     <div class="text-center mt-4 col-12">
-                        <button [disabled]="form.invalid || signining" type="submit" class="btn btn-acent w-50">
+                        <button [disabled]="form.invalid || signining || this.form.value.pass !== this.form.value.repPass" type="submit" class="btn btn-acent w-50">
                             {{!signining? 'Hacer registro': 'Registrando...'}}
                             <i *ngIf="signining" class="mx-2 fas fa-sync fa-spin"></i>
                         </button>

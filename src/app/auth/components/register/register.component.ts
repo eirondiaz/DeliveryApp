@@ -13,14 +13,13 @@ export class RegisterComponent implements OnInit {
 
   form:FormGroup
   constructor(private dataService: AuthService,
-    private formBluider: FormBuilder,
+    private formBluilder: FormBuilder,
     private router: Router) {
     this.createForm()
   }
   
-  passIsTheSame = true
   createForm() {
-    this.form = this.formBluider.group({
+    this.form = this.formBluilder.group({
       user: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9_]*')]],
       name: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -31,10 +30,6 @@ export class RegisterComponent implements OnInit {
       repPass: ['', Validators.required],
     })
 
-    if (this.form.value.pass !== this.form.value.repPass) {
-      this.form.value.pass.invalid
-      this.passIsTheSame = false
-    }
   }
 
   signining = false
