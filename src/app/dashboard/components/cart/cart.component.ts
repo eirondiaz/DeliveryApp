@@ -18,6 +18,17 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setCoupon= false
+  appliedCoupon= false
+
+  addCoupon() {
+    this.setCoupon = true
+  }
+
+  getCoupon() {
+    this.appliedCoupon = true
+  }
+
   ownAdr = true
   provAdr = false
   newAdr = false

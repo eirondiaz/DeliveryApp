@@ -29,7 +29,6 @@ export class RegisterComponent implements OnInit {
       pass: ['', Validators.required],
       repPass: ['', Validators.required],
     })
-
   }
 
   signining = false
