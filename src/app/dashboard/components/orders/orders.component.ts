@@ -18,10 +18,31 @@ export class OrdersComponent implements OnInit {
   
   orderList = []
 
+  todayList = []
+  today = new Date()
   getOrders(status) {
+    
     this.orderData.getOrders(status).subscribe(
       res => {
         this.orderList = res.data
+        
+        this.orderList.map(x => {
+                    
+          let currentDay = this.today.getDate().toString()
+
+          let currentMonth = (this.today.getMonth() + 1).toString().length == 1 ?
+            '0' + (this.today.getMonth() + 1) : (this.today.getMonth() + 1).toString()
+          
+          let orderDay = x.createdAt.substring(8, 10)
+          
+          let orderMonth = x.createdAt.substring(5, 7)
+          
+          if (currentDay == orderDay && currentMonth == orderMonth) {
+            return x.createdAt = 'Hoy'
+          }
+
+        })
+
       }
     ), error => {console.log(error)}
   }

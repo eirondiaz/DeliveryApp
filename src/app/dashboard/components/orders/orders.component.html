@@ -26,7 +26,7 @@
         
     </div>
 
-    <div class="row mt-3 pt-3">
+    <div class="row mt-3 pt-3 ">
 
         <div *ngIf="orderList.length === 0" class="animated fadeIn alert alert-warning">
             No hay ninguna orden en este estado
@@ -49,7 +49,7 @@
               <td>{{order.address}}</td>
               <td>${{order.total}}</td>
               <td>{{orderList.length}}</td>
-              <td>{{order.createdAt | date}}</td>              
+              <td >{{order.createdAt == 'Hoy'? order.createdAt: order.createdAt | date}}</td>              
             </tr>              
             
           </tbody>
