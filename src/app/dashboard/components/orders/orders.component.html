@@ -26,4 +26,36 @@
         
     </div>
 
+    <div class="row mt-3 pt-3">
+
+        <div *ngIf="orderList.length === 0" class="animated fadeIn alert alert-warning">
+            No hay ninguna orden en este estado
+        </div>
+
+        <table *ngIf="orderList.length > 0"  class="table animated fadeIn">
+              
+            <thead style="width: 100%;" >
+              <tr class="text-center">
+                <th class="th-left" scope="col">Direccion</th>
+                <th scope="col">Total</th>
+                <th scope="col">Cantidad</th>
+                <th class="th-right" scope="col">Fecha</th>
+              </tr>
+            </thead>
+
+          <tbody >
+              <tr *ngFor="let order of orderList; let i = index" 
+              class="text-center mt-4 ">
+              <td>{{order.address}}</td>
+              <td>${{order.total}}</td>
+              <td>{{orderList.length}}</td>
+              <td>{{order.createdAt | date}}</td>              
+            </tr>              
+            
+          </tbody>
+
+         
+        </table>
+    </div>
+
 </div>

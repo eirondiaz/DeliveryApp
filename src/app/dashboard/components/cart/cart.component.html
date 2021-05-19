@@ -71,7 +71,10 @@
                     Total: 
                     <strong class="text-acent">${{total}}</strong>
                 </h5>
-                <button class="btn btn-sm btn-acent w-100">Ordenar ahora</button>
+                <button [disabled]="cartList.length === 0" (click)="createOrder()" class="btn btn-sm btn-acent w-100">
+                    {{!loading? 'Ordenar ahora': 'Ordenando...'}}
+                    <i *ngIf="loading" class="fas fa-sync fa-spin mx-2"></i>
+                </button>
             </div>
         </div>
     </div>

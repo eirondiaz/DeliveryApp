@@ -1,9 +1,28 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
 
-  constructor() { }
+  constructor(private http: HttpClient ) { }
+
+  urlAPI = 'https://delivery-app-dr.herokuapp.com/api/v1/orders'
+
+  createOrder(data: any) {
+    return this.http.post<any>(this.urlAPI, data, {
+      headers: new HttpHeaders({    
+        'Authorization': localStorage.getItem('token') + ''
+      })
+    })
+  }
+
+  getOrders(status: string) {
+    return this.http.get<any>(`${this.urlAPI}/user?status=${status}`,{
+      headers: new HttpHeaders({    
+        'Authorization': localStorage.getItem('token') + ''
+      })
+    })
+  }
 }

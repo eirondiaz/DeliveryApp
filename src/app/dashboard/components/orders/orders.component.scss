@@ -1,4 +1,6 @@
-$acent: rgb(250, 88, 48);
+// $acent-secondary: rgb(160, 118, 240);
+$acent: #fa5830;
+$acent-secondary: #fa9177;
 $fz:15px;
 
 .tab-not{
@@ -28,4 +30,62 @@ $fz:15px;
     padding-right: 0px;
     cursor: pointer;
     transition: all 0.20s linear;
+}
+
+
+.order-card{
+    border-radius: 14px;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.10);
+    padding: 10px;
+    margin-bottom: 10px;
+    margin: 4px;
+}
+
+
+table {
+	border-spacing: 0 8px;
+	border-collapse: separate ;
+    width: 100%;
+}
+table thead tr th,
+table thead tr td,
+table tbody tr th,
+table tbody tr td {
+	vertical-align: middle;
+	border: none;
+}
+
+table tbody tr {
+    box-shadow: 0px 0px 25px rgba(77, 77, 77, 0.08);
+	border-radius: 16px;
+}
+table tbody tr td {
+	background: white;
+}
+table tbody tr td:nth-child(1) {
+	border-radius: 16px 0 0 16px;
+}
+table tbody tr td:nth-last-child(1) {
+	border-radius: 0 16px 16px 0;
+}
+th{
+    background-color: #fa9177;
+    color: white;
+    font-size: 16px;
+}
+.th-left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.th-right{
+    
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+table thead tr th:nth-last-child(1),
+table thead tr td:nth-last-child(1),
+table tbody tr th:nth-last-child(1),
+table tbody tr td:nth-last-child(1) {
+	text-align: center;
 }

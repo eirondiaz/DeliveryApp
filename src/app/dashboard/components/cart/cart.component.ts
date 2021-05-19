@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import Swal from 'sweetalert2';
 import { UserService } from '../../services/user.service';
+import { OrderService } from '../../services/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +12,11 @@ import { UserService } from '../../services/user.service';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private cartData: CartService, private userData:UserService) { 
+  constructor(private cartData: CartService,
+    private userData: UserService,
+    private orderData: OrderService,
+    private router: Router
+  ) {
     this.getCarts()
     this.getCurrenUser()
   }
@@ -27,6 +33,27 @@ export class CartComponent implements OnInit {
 
   getCoupon() {
     this.appliedCoupon = true
+  }
+
+  loading = false
+
+  createOrder() {
+    this.loading = true
+    let adr = this.ownAdr? this.currentUser.address: this.provitionalAddress
+    
+    let data = {
+      address: adr,
+      total: this.total
+    }
+    this.orderData.createOrder(data).subscribe(
+      res => {
+        this.loading = false
+        this.router.navigate(['/dashboard/orders'])        
+      }, error => {
+        console.log(error)
+        this.loading = false
+      }
+    )
   }
 
   ownAdr = true

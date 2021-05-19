@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   checkRoute() {
     let urlProv = '/dashboard'
     if (this.router.url===`${urlProv}/home` || this.router.url.includes(`${urlProv}/view`)) {      
@@ -37,6 +37,7 @@ export class NavbarComponent implements OnInit {
   accountActive
   
   changePage(id: any) {
+
     if (id === 'home') {
       this.homeActive = true
       this.ordersActive = false
