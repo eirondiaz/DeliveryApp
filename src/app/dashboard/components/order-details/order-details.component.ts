@@ -24,6 +24,8 @@ export class OrderDetailsComponent implements OnInit {
     items: {},
     status: '',
     total: 0,
+    discount: 0,
+    subtotal:0,
     updatedAt: '',
     user: {},
     _id: ''
@@ -32,6 +34,7 @@ export class OrderDetailsComponent implements OnInit {
   products= []
   status: string
   
+  canDelete = false
   getOrder(id: string) {
     this.orderData.getOrderById(id).subscribe(
       res => {
@@ -41,6 +44,7 @@ export class OrderDetailsComponent implements OnInit {
 
         if (this.order.status === 'ordered') {
           this.status = 'Ordenado'
+          this.canDelete = true
         }
         if (this.order.status === 'accepted') {
           this.status = 'Aceptada'

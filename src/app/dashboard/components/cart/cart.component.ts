@@ -43,7 +43,7 @@ export class CartComponent implements OnInit {
     
     let data = {
       address: adr,
-      total: this.total
+      subtotal: this.subtotal
     }
     this.orderData.createOrder(data).subscribe(
       res => {

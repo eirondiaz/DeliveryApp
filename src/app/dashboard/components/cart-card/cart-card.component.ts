@@ -11,6 +11,8 @@ export class CartCardComponent implements OnInit {
   constructor(private data: CartService) { }
 
   @Input() public cartData:any = {}
+  @Input() public viewX = true
+
   @Output() public event = new EventEmitter<any>()
   
   ngOnInit(): void {

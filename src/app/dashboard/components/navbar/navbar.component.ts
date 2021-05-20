@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
   accountActive
   
   changePage(id: any) {
-
+    
     if (id === 'home') {
       this.homeActive = true
       this.ordersActive = false
