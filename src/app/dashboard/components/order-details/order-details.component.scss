@@ -1,0 +1,36 @@
+// $acent-secondary: rgb(160, 118, 240);
+$acent: #fa5830;
+$acent-secondary: #fa9177;
+$fz:15px;
+$acent: rgb(250, 88, 48);
+
+.borders-acent{
+    border: 0.8px solid $acent;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+h5{
+    font-size: 18px;
+}
+
+
+.address-card-selected{
+    border-radius: 18px;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.20);
+    border: 1.2px solid $acent;
+    padding: 14px;
+    color: rgb(31, 31, 31);
+    transition: all 0.2s linear;
+}
+
+.address-card-selected h4{
+    color: $acent;
+    font-weight: bold;
+}
+
+.status{
+    border-radius: 12px; 
+    border: 1px solid $acent;
+    padding: 6px;
+}

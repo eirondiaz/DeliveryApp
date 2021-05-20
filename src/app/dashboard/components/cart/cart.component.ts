@@ -47,6 +47,7 @@ export class CartComponent implements OnInit {
     }
     this.orderData.createOrder(data).subscribe(
       res => {
+        console.log(res.data)
         this.loading = false
         this.router.navigate(['/dashboard/orders'])        
       }, error => {

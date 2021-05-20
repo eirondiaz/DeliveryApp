@@ -17,4 +17,5 @@ export class ProductService {
   getProductById(id: string) {
     return this.http.get<any>(`${this.urlAPI}/${id}`)
   }
+  
 }

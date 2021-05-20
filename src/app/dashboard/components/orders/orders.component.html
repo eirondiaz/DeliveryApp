@@ -44,11 +44,11 @@
             </thead>
 
           <tbody >
-              <tr *ngFor="let order of orderList; let i = index" 
+              <tr style="cursor: pointer;"  [routerLink]="['/dashboard/order-details', order._id]" *ngFor="let order of orderList; let i = index" 
               class="text-center mt-4 ">
               <td>{{order.address}}</td>
               <td>${{order.total}}</td>
-              <td>{{orderList.length}}</td>
+              <td>{{order.items.length}}</td>
               <td >{{order.createdAt == 'Hoy'? order.createdAt: order.createdAt | date}}</td>              
             </tr>              
             

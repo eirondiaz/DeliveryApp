@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
     if (this.router.url===`${urlProv}/home` || this.router.url.includes(`${urlProv}/view`)) {      
       this.homeActive = true
     }
-    if (this.router.url===`${urlProv}/orders`) {      
+    if (this.router.url===`${urlProv}/orders` || this.router.url.includes(`${urlProv}/order-details`)) {      
       this.ordersActive = true
     }
     if (this.router.url===`${urlProv}/cart`) {      
