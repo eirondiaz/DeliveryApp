@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { UserService } from '../../services/user.service';
 import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
+import { CouponService } from '../../services/coupon.service';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,8 @@ export class CartComponent implements OnInit {
   constructor(private cartData: CartService,
     private userData: UserService,
     private orderData: OrderService,
-    private router: Router
+    private router: Router,
+    private couponData: CouponService
   ) {
     this.getCarts()
     this.getCurrenUser()
@@ -31,10 +33,6 @@ export class CartComponent implements OnInit {
     this.setCoupon = true
   }
 
-  getCoupon() {
-    this.appliedCoupon = true
-  }
-
   loading = false
 
   createOrder() {
@@ -43,13 +41,29 @@ export class CartComponent implements OnInit {
     
     let data = {
       address: adr,
-      subtotal: this.subtotal
+      subtotal: this.subtotal,
+      coupon: this.couponD.code
     }
     this.orderData.createOrder(data).subscribe(
       res => {
-        console.log(res.data)
         this.loading = false
-        this.router.navigate(['/dashboard/orders'])        
+        if (res.ok) {
+          this.router.navigate(['/dashboard/orders'])
+        } else {
+          if (res.msg == 'coupon already used') {
+            Swal.fire({
+              icon: 'error',
+              text:'Este cupon no puede ser aplicado',
+              confirmButtonColor: '#fa5830'
+            })
+          }
+          this.setCoupon = false
+          this.appliedCoupon = false
+          this.coupon = ''          
+          this.couponD = {}
+          this.total = this.subtotal
+          this.descuento = 0
+        }
       }, error => {
         console.log(error)
         this.loading = false
@@ -96,10 +110,52 @@ export class CartComponent implements OnInit {
     })
   }
 
+  coupon = ''
+  couponD:any = {}
+  getCouponByCode(couponCode: string) {
+    this.couponData.getCouponByCode(couponCode).subscribe(
+      res => {
+        if (res.ok) {
+          console.log(res);
+          this.appliedCoupon = true
+          this.couponD = res.data
+          this.descuento = this.subtotal * (this.couponD.discount / 100)
+          this.total = this.subtotal - this.descuento
+          this.coupon = couponCode
+        } else {
+          if (res.msg == 'coupon deprecated') {
+            Swal.fire({
+              icon: 'error',
+              text: 'Este cupon esta obsoleto',
+              confirmButtonColor: '#fa5830'
+            })
+          }
+
+          this.setCoupon = false
+          this.appliedCoupon = false
+          this.coupon = ''          
+        }
+      }, error => {
+        console.log(error)
+        Swal.fire({
+          icon: 'error',
+          text: 'Este cupon no es valido',
+          confirmButtonColor: '#fa5830'
+        })
+
+        this.setCoupon = false
+        this.appliedCoupon = false
+        this.coupon = ''  
+      }
+    )
+  }
+
   cartList = []
   subtotal= 0
   descuento = 0
   total = 0
+
+
   getCarts() {
     this.cartData.getAllCarts().subscribe(
       res => {

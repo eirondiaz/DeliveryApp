@@ -19,7 +19,9 @@ export class OrdersComponent implements OnInit {
   orderList = []
 
   todayList = []
+
   today = new Date()
+  
   getOrders(status) {
     
     this.orderData.getOrders(status).subscribe(
@@ -42,8 +44,6 @@ export class OrdersComponent implements OnInit {
           }
 
         })
-
-
       }
     ), error => console.log(error)
   }

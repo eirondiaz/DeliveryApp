@@ -60,12 +60,12 @@
                 <label (click)="addCoupon()" *ngIf="!setCoupon" style="cursor: pointer;" class=" text-acent">Agregar cupón</label>
                 <label class="animated fadeIn" *ngIf="appliedCoupon" style="color: gray; font-size: 11px;" >
                     <i>
-                        Cupón: <label class="text-acent">HJKSADI-82731ASD</label> aplicado!, <label class="text-acent">15%</label>
+                        Cupón: <label class="text-acent">{{couponD.code}}</label> aplicado!, <label class="text-acent">{{couponD.discount}}%</label>
                     </i>
                 </label>
                 <div  *ngIf="setCoupon && !appliedCoupon" class="animated fadeIn input-group my-2">
-                    <input type="text" class="form-control form-control-sm" placeholder="Codigo de cupón" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button (click)="getCoupon()" class="btn btn-sm btn-acent" type="button" id="button-addon2">Canjear</button>                
+                    <input #couponC type="text" class="form-control form-control-sm" placeholder="Codigo de cupón" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button (click)="getCouponByCode(this.couponC.value)" class="btn btn-sm btn-acent" type="button" id="button-addon2">Canjear</button>                
                 </div>
                 <h5 class="mb-3">
                     Total: 
