@@ -28,8 +28,11 @@ export class OrderDetailsComponent implements OnInit {
     subtotal:0,
     updatedAt: '',
     user: {},
-    _id: ''
+    _id: '',
+    coupon: {}
   }
+
+  hayCupon: boolean = false
 
   products= []
   status: string
@@ -38,9 +41,10 @@ export class OrderDetailsComponent implements OnInit {
   getOrder(id: string) {
     this.orderData.getOrderById(id).subscribe(
       res => {
-        console.log(res.data)
         this.order = res.data
         this.products = res.data.items
+        this.order.coupon !== null? this.hayCupon = true: this.hayCupon = false
+        this.order.coupon == undefined? this.hayCupon = false: null
 
         if (this.order.status === 'ordered') {
           this.status = 'Ordenado'

@@ -30,23 +30,25 @@
         </div>
         <div class="col-lg-4 col-md-5 ">
             <div class="borders-acent">
-                <h3 class="text-acent mb-2">Orden</h3>
+                <h3 class="text-acent mb-3">Orden</h3>
                 <h5 >
                     Sub-Total: 
                     <strong class="text-acent">${{order.subtotal}}</strong>
                 </h5>
-                <h5 class="mb-0">
+                <h5 class="mb-0 aa">
                     Descuento: 
                     <strong class="text-acent">${{order.discount}}</strong>
                 </h5>
                 
-                <label class="animated fadeIn" *ngIf="" style="color: gray; font-size: 11px;" >
+                <label class="animated fadeIn" *ngIf="hayCupon" style="color: gray; font-size: 11px;" >
                     <i>
-                        Cupón: <label class="text-acent">HJKSADI-82731ASD</label> aplicado!, <label class="text-acent">15%</label>
+                        Cupón: <label class="text-acent">{{order.coupon.code}}</label> aplicado!, <label class="text-acent">{{order.coupon.discount}}%</label>
                     </i>
                 </label>
+
+                <div *ngIf="!hayCupon" style="margin-bottom: 18px;"></div>
                 
-                <h5 class="mb-3">
+                <h5 class="mb-3 mt-1">
                     Total: 
                     <strong class="text-acent">${{order.total}}</strong>
                 </h5>

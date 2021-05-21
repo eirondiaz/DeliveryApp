@@ -42,7 +42,7 @@ export class CartComponent implements OnInit {
     let data = {
       address: adr,
       subtotal: this.subtotal,
-      coupon: this.couponD.code
+      coupon: this.couponD._id
     }
     this.orderData.createOrder(data).subscribe(
       res => {
@@ -53,7 +53,7 @@ export class CartComponent implements OnInit {
           if (res.msg == 'coupon already used') {
             Swal.fire({
               icon: 'error',
-              text:'Este cupon no puede ser aplicado',
+              text:'Usted ya usó este cupón',
               confirmButtonColor: '#fa5830'
             })
           }
