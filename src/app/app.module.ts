@@ -10,6 +10,7 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarGGComponent } from './layouts/navbar-gg/navbar-gg.component'
 import { DashboardModule } from './dashboard/dashboard.module';
+import { LayoutModule } from '@angular/cdk/layout'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DashboardModule
+    DashboardModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
    -->
@@ -21,5 +22,22 @@
   </head>
 <body>
   <app-root></app-root>
+  <script>
+      let btn = document.querySelector("#btn");
+      let sidebar = document.querySelector(".sidebar");
+      let searchBtn = document.querySelector(".bx-search");
+
+      btn.onclick = function() {
+          sidebar.classList.toggle("active");
+          if(btn.classList.contains("bx-menu")){
+          btn.classList.replace("bx-menu" , "bx-menu-alt-right");
+          }else{
+          btn.classList.replace("bx-menu-alt-right", "bx-menu");
+          }
+      }
+      searchBtn.onclick = function() {
+          sidebar.classList.toggle("active");
+      }
+  </script>
 </body>
 </html>

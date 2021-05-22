@@ -1,0 +1,49 @@
+.admin-card {
+    padding: 13px 20px;
+    border-radius: 14px;
+    box-shadow: 0px 0px 25px rgba(37, 37, 37, 0.20);
+    background-color: #fff;
+}
+
+.content-icon {
+    padding-bottom: 12px; 
+    padding-top: 12px; 
+    border-radius: 13px; 
+    background-color: rgba(248, 89, 49, 0.3);
+}
+
+.content-icon i {
+    font-size: 30px; 
+    color: #fa5830;
+}
+
+.icon-up {
+    color: rgba(36, 151, 36, 0.5); 
+    font-size: 23px;
+}
+
+.icon-down {
+    color: rgba(219, 23, 23, 0.5); 
+    font-size: 23px;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-style: none !important;
+}
+
+tbody, tr, td {
+    padding: 2px;
+    cursor: pointer;
+}
+tbody, tr {
+    background-color: #fff;
+    color: #000;
+}
+tbody, tr:hover {
+    background-color: rgba(250, 88, 48, 0.2);
+    color: #fff;
+}
+thead, tr, th {
+    padding: 0;
+    padding-bottom: 17px;
+}
