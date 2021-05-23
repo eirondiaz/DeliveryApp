@@ -1,5 +1,7 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-layout',
@@ -13,7 +15,7 @@ export class AdminLayoutComponent implements OnInit {
 
   sidebarActive
 
-  constructor(public breakpointObserver: BreakpointObserver) { }
+  constructor(public breakpointObserver: BreakpointObserver, private router: Router) { }
 
   ngOnInit(): void {
     this.breakpointObserver
@@ -49,6 +51,24 @@ export class AdminLayoutComponent implements OnInit {
       //console.log('object')
       //this.open? this.sidebar.nativeElement.className = 'sidebar': this.sidebar.nativeElement.className = 'sidebar active' 
     }
+  }
+
+  logOut() {
+    Swal.fire({
+      icon: 'question',
+      title: 'Cerrar sesión',
+      text: 'Seguro que desea cerrar sesión?',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#fa5830',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      cancelButtonColor:'gray'
+    }).then(x => {      
+      if (x.isConfirmed) {
+        localStorage.removeItem('token')
+        this.router.navigate(['/auth/login'])
+      }
+    })
   }
 
 }

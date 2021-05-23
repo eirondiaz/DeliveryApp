@@ -10,8 +10,8 @@
               <i class='bx bx-cart'></i>
             <div class="logo_name">DeliveryApp</div>
             </div>
-            <i #btn *ngIf="!open" (click)="toggleSidebar()" class='bx bx-menu' id="btn"></i>
-            <i #btn *ngIf="open" (click)="toggleSidebar()" class='bx bx-menu-alt-right' id="btn"></i>
+            <i #btn *ngIf="!open" (click)="toggleSidebar()" style="cursor: pointer;"  class='bx bx-menu' id="btn"></i>
+            <i #btn *ngIf="open" (click)="toggleSidebar()"  style="cursor: pointer;" class='bx bx-menu-alt-right' id="btn"></i>
         </div>
         <ul class="nav_list" style="margin-top: 80px">
           <li>
@@ -42,15 +42,8 @@
             </a>
             <span class="tooltip">Cupones</span>
           </li>
-          <li>
-            <a href="#">
-              <i class='bx bx-cog' ></i>
-              <span class="links_name">Setting</span>
-            </a>
-            <span class="tooltip">Setting</span>
-          </li>
         </ul>
-        <div class="profile_content">
+        <div style="cursor: pointer;" (click)="logOut()" class="profile_content">
           <div class="profile">
             <div class="profile_details">
               <!--<img src="profile.jpg" alt="">-->
@@ -59,11 +52,11 @@
                 <div class="job">Web Designer</div>
               </div>
             </div>
-            <i class='bx bx-log-out' id="log_out" ></i>
+            <i  class='bx bx-log-out' id="log_out" ></i>
           </div>
         </div>
     </div>
-    <div style="background-color: rgb(238, 253, 255);" class="home_content">
+    <div style="background-color: rgba(250, 145, 119, 0.15);" class="home_content">
         <div class="container my-3">
             <router-outlet></router-outlet>
         </div>
