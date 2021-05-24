@@ -5,7 +5,7 @@
                 <h5 class="text-acent">Total ordenes</h5>
                 <div class="row">
                     <div class="col-8">
-                        <h2 style="font-size: 40px;">345</h2>
+                        <h2 style="font-size: 40px;">{{totalOrders}}</h2>
                     </div>
                     <div class="col-4">
                         <div class="text-center content-icon">
@@ -13,7 +13,11 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div *ngIf="!countTotal">
+                    <i class='bx bxs-down-arrow-circle icon-down mt-1' ></i>
+                    <p style="color: rgb(207, 207, 207);" class="d-inline-block mb-0">Menos que ayer</p>
+                </div>
+                <div *ngIf="countTotal">
                     <i class='bx bxs-up-arrow-circle mt-1 icon-up' ></i>
                     <p style="color: rgb(207, 207, 207);" class="d-inline-block mb-0">Mas que ayer</p>
                 </div>
@@ -24,7 +28,7 @@
                 <h5 class="text-acent">Total ordenes</h5>
                 <div class="row">
                     <div class="col-8">
-                        <h2 style="font-size: 40px;">$345</h2>
+                        <h2 style="font-size: 40px;">${{totalMoney}}</h2>
                     </div>
                     <div class="col-4">
                         <div class="text-center content-icon">
@@ -32,7 +36,11 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div *ngIf="!countMoney">
+                    <i class='bx bxs-down-arrow-circle icon-down mt-1' ></i>
+                    <p style="color: rgb(207, 207, 207);" class="d-inline-block mb-0">Menos que ayer</p>
+                </div>
+                <div *ngIf="countMoney">
                     <i class='bx bxs-up-arrow-circle icon-up mt-1' ></i>
                     <p style="color: rgb(207, 207, 207);" class="d-inline-block mb-0">Mas que ayer</p>
                 </div>
@@ -72,23 +80,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>12/32/3123</td>
-                        <td>Otto</td>
-                        <td>Entregado</td>
-                        <td>$233</td>
-                      </tr>
-                      <tr>
-                        <td>03/11/5423</td>
-                        <td>Jacob</td>
-                        <td>En transito</td>
-                        <td>$1,344</td>
-                      </tr>
-                      <tr>
-                        <td>32/12/5345</td>
-                        <td>@twitter</td>
-                        <td>Aceptado</td>
-                        <td>$723</td>
+                      <tr *ngFor="let order of orders">
+                        <td>{{order.createdAt.substring(0, 10) | date}}</td>
+                        <td>{{order.user.name}}</td>
+                        <td>{{order.status}}</td>
+                        <td>${{order.total}}</td>
                       </tr>
                     </tbody>
                 </table>

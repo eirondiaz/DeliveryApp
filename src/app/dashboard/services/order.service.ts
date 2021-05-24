@@ -26,6 +26,18 @@ export class OrderService {
     })
   }
 
+  getOrdersCurrentDay() {
+    return this.http.get<any>(`${this.urlAPI}/current-date`)
+  }
+
+  getAllOrders(status: string, limit: number) {
+    return this.http.get<any>(`${this.urlAPI}/?limit=${limit}`,{
+      headers: new HttpHeaders({    
+        'Authorization': localStorage.getItem('token') + ''
+      })
+    })
+  }
+
   getOrderById(id: string) {
     return this.http.get<any>(`${this.urlAPI}/${id}`,{
       headers: new HttpHeaders({    
