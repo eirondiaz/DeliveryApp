@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   orders: any[] = []
+  topProdcuts: any[] = []
   totalOrders = 0
   totalMoney = 0
   countTotal = false
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAllOrders()
     this.getOrdersCurrentDay()
+    this.getTopProducts()
   }
 
   getAllOrders() {
@@ -33,13 +35,24 @@ export class HomeComponent implements OnInit {
   }
 
   getOrdersCurrentDay() {
-    console.log('object')
     this.orderService.getOrdersCurrentDay().subscribe(
       res => {
         this.totalOrders = res.data.length
         this.totalMoney = res.sellTotal.total
         this.countTotal = res.count
         this.countMoney = res.sellTotal.countm
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  getTopProducts() {
+    this.orderService.getTopProducts().subscribe(
+      res => {
+        this.topProdcuts = res.data
+        console.log(this.topProdcuts)
       },
       error => {
         console.log(error)

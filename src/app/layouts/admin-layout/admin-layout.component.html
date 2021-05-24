@@ -1,8 +1,3 @@
-<!-- <div class="container">
-    <h1>ADMIN LAYOUT</h1>
-
-    <router-outlet></router-outlet>
-</div> -->
 <div class="bodyy">
     <div #sidebar class="sidebar active">
         <div class="logo_content">
@@ -22,7 +17,7 @@
             <span class="tooltip">Dashboard</span>
           </li>
           <li>
-            <a href="#">
+            <a routerLink="/admin/products">
               <i class='bx bx-box' ></i>
               <span class="links_name">Productos</span>
             </a>
@@ -36,7 +31,7 @@
             <span class="tooltip">Ordenes</span>
           </li>
           <li>
-            <a href="#">
+            <a routerLink="/admin/coupons">
               <i class='bx bxs-coupon' ></i>
               <span class="links_name">Cupones</span>
             </a>

@@ -18,7 +18,7 @@
                     <p style="color: rgb(207, 207, 207);" class="d-inline-block mb-0">Menos que ayer</p>
                 </div>
                 <div *ngIf="countTotal">
-                    <i class='bx bxs-up-arrow-circle mt-1 icon-up' ></i>
+                    <i class='bx bxs-up-arrow-circle mt-1 icon-up'></i>
                     <p style="color: rgb(207, 207, 207);" class="d-inline-block mb-0">Mas que ayer</p>
                 </div>
             </div>
@@ -89,7 +89,6 @@
                     </tbody>
                 </table>
                 <div style="height: 30px;" >
-
                     <button class="btn btn-acent btn-sm float-end" >Ver todos</button>
                 </div>
             </div>
@@ -97,6 +96,12 @@
         <div class="col-12 col-md-4">
             <div class="admin-card">
                 <h5 class="text-acent mb-3">Top productos</h5>
+                <ul class="list-group list-group-flush">
+                    <li *ngFor="let prod of topProdcuts" class="list-group-item list-element">
+                        {{prod.product[0].name}}
+                        <span class="float-end text-acent">${{prod.total}}</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
