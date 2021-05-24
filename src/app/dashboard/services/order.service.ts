@@ -33,4 +33,8 @@ export class OrderService {
       })
     })
   }
+
+  getTopProducts() {
+    return this.http.get<any>(`${this.urlAPI}/top-products`,)
+  }
 }

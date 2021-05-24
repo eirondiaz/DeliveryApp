@@ -1,0 +1,24 @@
+<div class="row my-5">
+    <div class="col-12 col-lg-6 mb-5">
+        <h5 style="font-size: 30px;" class="text-center text-acent mb-3">Productos más comprados</h5>
+        <div style="display: block">
+            <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                [colors]="pieChartColors">
+            </canvas>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6">
+        <h5 style="font-size: 30px;" class="text-center text-acent mb-3">Productos con más ganancias</h5>
+        <div style="display: block">
+            <canvas baseChart
+                [data]="doughnutChartData2"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"
+                [colors]="pieChartColors">
+            </canvas>
+        </div>
+    </div>
+</div>
