@@ -8,18 +8,22 @@
                 <h4 class="text-acent">Crear cupón</h4>
                 <form class="mt-3 mb-2">
                     <div class="form-group">
-                        <label class="text-acent" for="">CODE</label>
-                        <input type="text" class="form-control">
+                        <label class="text-acent" for="code">CODE</label> <br>
+                        <input type="text" [(ngModel)]="coupon.code" class="form-control inp-random" name="code" id="code">
+                        <button (click)="generatePassword()" class="btn btn-acent btn-sm btn-random">
+                            <span *ngIf="!dice">random</span>
+                            <i *ngIf="dice" class="fas fa-dice bx-tada"></i>
+                        </button>
                     </div>
                     <div class="form-group mt-2">
-                        <label class="text-acent" for="">DESCUENTO (%)</label>
-                        <input type="number" class="form-control">
+                        <label class="text-acent" for="discount">DESCUENTO (%)</label>
+                        <input type="number" [(ngModel)]="coupon.discount" class="form-control" name="discount" id="discount">
                     </div>
                     <div class="form-group mt-2">
-                        <label class="text-acent" for="">LIMITE DE USO</label>
-                        <input type="number" class="form-control">
+                        <label class="text-acent" for="useslimit">LIMITE DE USO</label>
+                        <input type="number" [(ngModel)]="coupon.usesLimit" class="form-control" name="useslimit" id="useslimit">
                     </div>
-                    <button type="submit" class="btn btn-acent w-100 mt-3">Crear cupón</button>
+                    <button type="submit" (click)="create()" class="btn btn-acent w-100 mt-3">Crear cupón</button>
                 </form>
             </div>
         </div>
@@ -28,17 +32,12 @@
                 <h4 class="text-acent">TODOS LOS CUPONES</h4>
                 <input type="text" class="form-control" placeholder="Buscar...">
                 <div class="mt-3">
-                    <div class="cupon-card">
-                        <span>CODE: <strong class="text-acent">reqrqwrerwrrqrer</strong></span> <br>
-                        <span>LIMITE DE USO: <strong class="text-acent">5</strong></span> <br>
-                        <span>USOS: <strong class="text-acent">2</strong></span> 
-                        <span class="float-end"><strong style="color: rgb(0, 156, 13);">VÁLIDO</strong></span> 
-                    </div>
-                    <div class="cupon-card">
-                        <span>CODE: <strong class="text-acent">reqrqwrerwrrqrewr</strong></span> <br>
-                        <span>LIMITE DE USO: <strong class="text-acent">5</strong></span> <br>
-                        <span>USOS: <strong class="text-acent">2</strong></span> 
-                        <span class="float-end"><strong style="color: rgb(187, 48, 30);">OBSOLETO</strong></span> 
+                    <div [routerLink]="['/admin/coupons/view', coupon.code]" class="cupon-card" *ngFor="let coupon of coupons">
+                        <span>CODE: <strong class="text-acent">{{coupon.code}}</strong></span> <br>
+                        <span>LIMITE DE USO: <strong class="text-acent">{{coupon.usesLimit}}</strong></span> <br>
+                        <span>DESCUENTO: <strong class="text-acent">{{coupon.discount}}%</strong></span> 
+                        <span *ngIf="coupon.deprecaded" class="float-end"><strong style="color: rgb(187, 48, 30);">OBSOLETO</strong></span>
+                        <span *ngIf="!coupon.deprecaded" class="float-end"><strong style="color: rgb(0, 156, 13);">VÁLIDO</strong></span> 
                     </div>
                 </div>
             </div>

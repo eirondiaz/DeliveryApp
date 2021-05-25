@@ -1,3 +1,4 @@
+import { ViewCouponComponent } from './components/view-coupon/view-coupon.component';
 import { CouponsComponent } from './components/coupons/coupons.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'coupons', component: CouponsComponent },
+  { path: 'coupons/view/:id', component: ViewCouponComponent },
 ];
 
 @NgModule({
