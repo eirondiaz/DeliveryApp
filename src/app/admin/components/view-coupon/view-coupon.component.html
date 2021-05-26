@@ -15,13 +15,28 @@
         <h6>USADO: <strong class="text-acent">{{coupon.uses}} VECES</strong></h6> 
         <h6 class="mb-1">USADO POR:</h6> 
 
-        <tbody>
+        <!-- <tbody>
             <tr
              *ngFor="let user of coupon.usedBy">
                 <i class='text-acent fas fa-chevron-right mx-1'></i>
                 {{user.user + ' (' + user.date.substring(0,10) +')' }}                
             </tr>
-        </tbody>
+        </tbody> -->
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Cliente</th>               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of coupon.usedBy">
+                <td>{{user.date.substring(0, 10) | date}}</td>
+                <td>{{user.user}}</td>               
+              </tr>
+            </tbody>
+        </table>
     </div>
     
 </div>

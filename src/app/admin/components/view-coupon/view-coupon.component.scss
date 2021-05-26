@@ -6,8 +6,28 @@
     background-color: white;
 }
 
-tbody tr:hover {
-    font-weight: bold;
-    cursor: pointer;
-    background-color:transparent !important;
+tbody, td, tfoot, th, thead, tr {
+    border-style: none !important;
+}
+
+th{
+    padding: 0;
+    padding-bottom: 1px;
+}
+
+tbody tr, td {
+    padding: 2px;
+    // cursor: pointer;
+}
+tbody, tr {
+    background-color: #fff;
+    color: #000;
+}
+// tbody tr:hover {
+//     background-color: rgba(250, 88, 48, 0.15);
+//     color: #fff;
+// }
+thead, tr {
+    padding: 0;
+    padding-bottom: 17px;
 }

@@ -24,8 +24,10 @@ export class ViewCouponComponent implements OnInit {
     this.data.getCouponByCode(code).subscribe(
       res => {
         console.log(res.data)
+
         this.coupon = res.data
 
+        //Eiron, tienes que popular los datos de usedBy para pode obtener los nombre de los usuarios xD
       }
     )
   }
