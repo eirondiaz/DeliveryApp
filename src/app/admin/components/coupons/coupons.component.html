@@ -10,7 +10,7 @@
                     <div class="form-group">
                         <label class="text-acent" for="code">CODE</label> <br>
                         <input type="text" [(ngModel)]="coupon.code" class="form-control inp-random" name="code" id="code">
-                        <button (click)="generatePassword()" class="btn btn-acent btn-sm btn-random">
+                        <button (click)="generateCode()" class="btn btn-acent btn-sm btn-random">
                             <span *ngIf="!dice">random</span>
                             <i *ngIf="dice" class="fas fa-dice bx-tada"></i>
                         </button>

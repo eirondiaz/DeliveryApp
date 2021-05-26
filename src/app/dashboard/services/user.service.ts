@@ -17,4 +17,14 @@ export class UserService {
       })
     })
   }
+
+  getUserById(id) {
+    return this.http.get<any>(`${this.urlAPI}/${id}`, {
+      headers: new HttpHeaders({    
+        'Authorization': localStorage.getItem('token') + ''
+      })
+    })
+  }
+
+
 }

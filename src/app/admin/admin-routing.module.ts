@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'coupons', component: CouponsComponent },
-  { path: 'coupons/view/:id', component: ViewCouponComponent },
+  { path: 'coupons/view/:code', component: ViewCouponComponent },
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {  ActivatedRoute } from '@angular/router';
+import { CouponService } from 'src/app/dashboard/services/coupon.service';
 
 @Component({
   selector: 'app-view-coupon',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewCouponComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private data: CouponService
+    
+  ) {
+    this.getCoupon(this.activatedRoute.snapshot.params.code)
+  }
 
   ngOnInit(): void {
+  }
+
+  coupon: any = {}
+  getCoupon(code: string) {
+    this.data.getCouponByCode(code).subscribe(
+      res => {
+        console.log(res.data)
+        this.coupon = res.data
+
+      }
+    )
   }
 
 }

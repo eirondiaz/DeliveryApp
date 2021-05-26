@@ -1,0 +1,13 @@
+.cupon-card {
+    border: 1px dashed #fa5830; 
+    padding: 15px; 
+    border-radius: 10px; 
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+tbody tr:hover {
+    font-weight: bold;
+    cursor: pointer;
+    background-color:transparent !important;
+}

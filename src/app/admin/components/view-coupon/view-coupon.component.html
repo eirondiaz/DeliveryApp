@@ -1,1 +1,27 @@
-<p>view-coupon works!</p>
+<div class="container mt-3">
+
+    <h1>Ver Cupón</h1>
+    <hr class="mb-3">
+
+    <div class="cupon-card">
+        <h6>CODIGO: <strong class="text-acent">{{coupon.code}}</strong></h6> 
+        <h6>LIMITE DE USO: <strong class="text-acent">{{coupon.usesLimit}}</strong></h6> 
+        <h6>DESCUENTO: <strong class="text-acent">{{coupon.discount}}%</strong></h6> 
+        <h6 >ESTADO:
+            <strong *ngIf="coupon.deprecaded"  style="color: rgb(187, 48, 30);">OBSOLETO</strong>
+            <strong *ngIf="!coupon.deprecaded" style="color: rgb(0, 156, 13);">VÁLIDO</strong>
+        </h6>
+        <h6>CREADO: <strong class="text-acent">{{coupon.createdAt?.substring(0, 10) | date}}</strong></h6> 
+        <h6>USADO: <strong class="text-acent">{{coupon.uses}} VECES</strong></h6> 
+        <h6 class="mb-1">USADO POR:</h6> 
+
+        <tbody>
+            <tr
+             *ngFor="let user of coupon.usedBy">
+                <i class='text-acent fas fa-chevron-right mx-1'></i>
+                {{user.user + ' (' + user.date.substring(0,10) +')' }}                
+            </tr>
+        </tbody>
+    </div>
+    
+</div>
