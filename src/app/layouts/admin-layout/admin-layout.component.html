@@ -1,12 +1,17 @@
 <div class="bodyy">
-    <div #sidebar class="sidebar active">
+    <div #sidebar class="sidebar hide">
         <div class="logo_content">
             <div class="logo">
               <i class='bx bx-cart'></i>
             <div class="logo_name">DeliveryApp</div>
             </div>
-            <i #btn *ngIf="!open" (click)="toggleSidebar()" style="cursor: pointer;"  class='bx bx-menu' id="btn"></i>
-            <i #btn *ngIf="open" (click)="toggleSidebar()"  style="cursor: pointer;" class='bx bx-menu-alt-right' id="btn"></i>
+            <div *ngIf="sidebarActive" >
+              <i #btn *ngIf="!open" (click)="toggleSidebar()" style="cursor: pointer;"  class='bx bx-menu' id="btn"></i>
+              <i #btn *ngIf="open" (click)="toggleSidebar()"  style="cursor: pointer;" class='bx bx-menu-alt-right' id="btn"></i>
+            </div>
+            <div *ngIf="!sidebarActive" >
+              <i #btn (click)="hideSidebar()"  style="cursor: pointer;" class='bx bx-menu-alt-right' id="btn"></i>
+            </div>
         </div>
         <ul class="nav_list" style="margin-top: 80px">
           <li>
@@ -59,6 +64,7 @@
         </div>
     </div>
     <div style="background-color: rgba(250, 145, 119, 0.15); overflow-y: auto;" class="home_content">
+        <i *ngIf="!mini" (click)="showMiniside()" style="font-size: 25px; margin-left: 10px;" class="bx bx-menu mt-2 text-acent"></i>
         <div class="container my-3">
             <router-outlet></router-outlet>
         </div>

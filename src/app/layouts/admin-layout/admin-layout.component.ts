@@ -31,6 +31,7 @@ export class AdminLayoutComponent implements OnInit {
           setTimeout(() => {
             this.sidebar.nativeElement.className = 'sidebar active'
           }, 100)
+          this.mini = true
           this.open = true
           this.sidebarActive = true
         }
@@ -69,6 +70,17 @@ export class AdminLayoutComponent implements OnInit {
         this.router.navigate(['/auth/login'])
       }
     })
+  }
+
+  mini = true
+  hideSidebar() {
+    this.mini = false
+    this.sidebar.nativeElement.className = 'sidebar hide'
+  }
+
+  showMiniside() {
+    this.mini = true
+    this.sidebar.nativeElement.className = 'sidebar'
   }
 
 }

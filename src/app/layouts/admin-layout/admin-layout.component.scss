@@ -250,6 +250,15 @@ ul {
     left: 240px;
   }
 
+
+  .sidebar.hide {
+    display: none;
+  }
+
+  .sidebar.hide ~ .home_content{
+    width: 100% !important;
+    left: 0px !important;
+  }
   /* @media screen and (max-width: 900px){
     .sidebar.active {
       width: 78px;
