@@ -30,9 +30,18 @@
         <div class="col-12 col-lg-7">
             <div class="admin-card">
                 <h4 class="text-acent">TODOS LOS CUPONES</h4>
-                <input type="text" class="form-control" placeholder="Buscar...">
-                <div class="mt-3">
+                <input type="text" #couponCodeKey (keyup)="searchCoupon(couponCodeKey.value.trim())" class="form-control" placeholder="Buscar...">
+                <div *ngIf="couponsFiltered.length === 0 && couponCodeKey.value == '' " class="mt-3 animated fadeIn">
                     <div [routerLink]="['/admin/coupons/view', coupon.code]" class="cupon-card" *ngFor="let coupon of coupons">
+                        <span>CODE: <strong class="text-acent">{{coupon.code}}</strong></span> <br>
+                        <span>LIMITE DE USO: <strong class="text-acent">{{coupon.usesLimit}}</strong></span> <br>
+                        <span>DESCUENTO: <strong class="text-acent">{{coupon.discount}}%</strong></span> 
+                        <span *ngIf="coupon.deprecaded" class="float-end"><strong style="color: rgb(187, 48, 30);">OBSOLETO</strong></span>
+                        <span *ngIf="!coupon.deprecaded" class="float-end"><strong style="color: rgb(0, 156, 13);">VÁLIDO</strong></span> 
+                    </div>
+                </div>
+                <div class="mt-3 animated fadeIn">
+                    <div [routerLink]="['/admin/coupons/view', coupon.code]" class="cupon-card" *ngFor="let coupon of couponsFiltered">
                         <span>CODE: <strong class="text-acent">{{coupon.code}}</strong></span> <br>
                         <span>LIMITE DE USO: <strong class="text-acent">{{coupon.usesLimit}}</strong></span> <br>
                         <span>DESCUENTO: <strong class="text-acent">{{coupon.discount}}%</strong></span> 

@@ -78,4 +78,13 @@ export class CouponsComponent implements OnInit {
     )
   }
 
+  //Seach Coupon
+
+  couponsFiltered:any = []
+  searchCoupon(code: string) {
+    this.couponsFiltered = this.coupons.filter((x: any) => {
+      return x.code.toLowerCase().includes(code.toLowerCase())
+    })
+  }
+
 }
