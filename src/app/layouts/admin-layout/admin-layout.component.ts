@@ -24,6 +24,7 @@ export class AdminLayoutComponent implements OnInit {
         if (state.matches) {
           setTimeout(() => {
             this.sidebar.nativeElement.className = 'sidebar'
+            this.hideSidebar()
           }, 100)
           this.sidebarActive = false
           this.open = false
