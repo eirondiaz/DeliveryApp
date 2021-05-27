@@ -48,7 +48,7 @@ export class CouponsComponent implements OnInit {
     )
   }
 
-  generatePassword() {
+  generateCode() {
     let length = 16
     let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     let retVal = "";
