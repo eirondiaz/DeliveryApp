@@ -37,7 +37,7 @@
                 
                 <div *ngIf="productsFiltered.length === 0 && name.value == '' " class="mt-3 animated fadeIn">
                    
-                    <div *ngFor="let product of products" class=" product-list-card mb-2">
+                    <div [routerLink]="['/admin/products/view', product._id]" *ngFor="let product of products" class=" product-list-card mb-2">
                         <div class="row">
                             
                             <div class="col-lg-3 col-4 " >
@@ -57,7 +57,7 @@
 
                 <div class="mt-3 animated fadeIn">
                    
-                    <div *ngFor="let product of productsFiltered" class=" product-list-card mb-2">
+                    <div [routerLink]="['/products/view', product._id]" *ngFor="let product of productsFiltered" class=" product-list-card mb-2">
                         <div class="row">
                             
                             <div class="col-lg-3 col-4 " >

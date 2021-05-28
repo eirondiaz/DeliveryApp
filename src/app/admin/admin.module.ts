@@ -9,10 +9,11 @@ import { ChartsModule } from 'ng2-charts';
 import { ProductsComponent } from './components/products/products.component';
 import { CouponsComponent } from './components/coupons/coupons.component';
 import { ViewCouponComponent } from './components/view-coupon/view-coupon.component';
+import { ViewProductComponent } from './components/view-product/view-product.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, AnalyticsComponent, ProductsComponent, CouponsComponent, ViewCouponComponent],
+  declarations: [HomeComponent, AnalyticsComponent, ProductsComponent, CouponsComponent, ViewCouponComponent, ViewProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -5,6 +5,7 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ViewProductComponent } from './components/view-product/view-product.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/admin/home' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'coupons', component: CouponsComponent },
   { path: 'coupons/view/:code', component: ViewCouponComponent },
+  { path: 'products/view/:id', component: ViewProductComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,33 @@
+<div class="container animated fadeIn" >
+    <h1 style="display: inline-block;" class="mt-1">Ver prodcto</h1>
+    <hr class="mb-4">
+    <div class="row">
+        <div class="col-lg-5 mb-4">
+            <img class="card-img" [src]="product.photo" alt="Imagen representativa del productucto {{product.name}}">
+        </div>
+        <div  class="col-lg-6 offset-lg-1">
+            <h1>
+                <strong class="text-acent">
+                    {{product.name | uppercase}}
+                </strong>
+            </h1>
+            
+            <h5 class="mb-3">
+                {{product.desc}}
+            </h5>
+
+            <hr class="mt-1 mb-3">
+            <h2 >Precio: 
+                <strong class="text-acent ">
+                    ${{product.price}}
+                </strong>
+            </h2>
+            <h2 >Ingresos esta semana: 
+                <strong class="text-acent ">
+                    $00
+                </strong>
+            </h2>
+            
+        </div>
+    </div>
+</div>
