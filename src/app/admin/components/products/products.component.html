@@ -1,4 +1,81 @@
 <div class="container animated fadeIn" >
     <h1 style="display: inline-block;" class="mt-1">Productos</h1>
     <hr class="mb-4">
+
+    <div class="row">
+        <div class="col-12 col-lg-5 mb-3">
+            <div class="admin-card">
+                <h4 class="text-acent">Crear producto</h4>
+                <form class="mt-3 mb-2">
+                    <div class="form-group">
+                        <label class="text-acent" for="name">NOMBRE</label> <br>
+                        <input type="text" [(ngModel)]="product.name" class="form-control " name="name" id="name">
+                        
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="text-acent" for="price">PRECIO</label>
+                        <input type="number" [(ngModel)]="product.price" class="form-control" name="price" id="price">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="text-acent" for="desc">DESCRIPCION</label>
+                        <input type="text" [(ngModel)]="product.desc" class="form-control" name="desc" id="desc">
+                    </div>
+                    
+                    <div class="form-group mt-2">
+                        <label class="text-acent" for="photo">IMAGEN</label>
+                        <input type="text" [(ngModel)]="product.photo" class="form-control" name="photo" id="photo">
+                    </div>
+                    
+                    <button type="submit" (click)="createProduct()" class="btn btn-acent w-100 mt-3">Crear producto</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-12 col-lg-7">
+            <div class="admin-card">
+                <h4 class="text-acent">TODOS LOS PRODUCTOS</h4>
+                <input type="text" #name (keyup)="searchProduct(name.value.trim())" class="form-control" placeholder="Buscar...">
+                
+                <div *ngIf="productsFiltered.length === 0 && name.value == '' " class="mt-3 animated fadeIn">
+                   
+                    <div *ngFor="let product of products" class=" product-list-card mb-2">
+                        <div class="row">
+                            
+                            <div class="col-lg-3 col-4 " >
+                                <img class="m-2 card-img" [src]="product.photo" alt="">
+                            </div>
+                            <div class="product-list-card-body col-lg-9 col-8">
+                                <span>NOMBRE: <strong class="text-acent text-capitalize">{{product.name}}</strong></span> 
+                                <i (click)="deleteProduct(product._id)"
+                                    style="cursor: pointer; font-size: 20px;" class="float-end fas fa-times mx-3 text-acent"></i>
+                                <br>
+                                <span>PRECIO: <strong class="text-acent text-capitalize">{{product.price}}</strong></span> <br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-3 animated fadeIn">
+                   
+                    <div *ngFor="let product of productsFiltered" class=" product-list-card mb-2">
+                        <div class="row">
+                            
+                            <div class="col-lg-3 col-4 " >
+                                <img class="m-2 card-img" [src]="product.photo" alt="">
+                            </div>
+                            <div class="product-list-card-body col-lg-9 col-8">
+                                <span>NOMBRE: <strong class="text-acent text-capitalize">{{product.name}}</strong></span> 
+                                <i (click)="deleteProduct(product._id)"
+                                    style="cursor: pointer; font-size: 20px;" class="float-end fas fa-times mx-3 text-acent"></i>
+                                <br>
+                                <span>PRECIO: <strong class="text-acent text-capitalize">{{product.price}}</strong></span> <br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                                
+            </div>
+        </div>
+    </div>
 </div>
