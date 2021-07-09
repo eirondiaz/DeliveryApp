@@ -10,7 +10,9 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarGGComponent } from './layouts/navbar-gg/navbar-gg.component'
 import { DashboardModule } from './dashboard/dashboard.module';
-import { LayoutModule } from '@angular/cdk/layout'
+import { LayoutModule } from '@angular/cdk/layout';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,13 @@ import { LayoutModule } from '@angular/cdk/layout'
     ReactiveFormsModule,
     HttpClientModule,
     DashboardModule,
-    LayoutModule
+    LayoutModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
